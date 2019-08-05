@@ -166,6 +166,7 @@ Plug 'tmhedberg/simpylfold'
 Plug 'zchee/deoplete-jedi'
 " Highlight what was yanked for a moment.
 Plug 'machakann/vim-highlightedyank'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 "===============================================================================
@@ -234,8 +235,9 @@ let g:DeleteTrailingWhitespace_Action = 'delete'
 " Map fd to allow quick exit from insert mode.
 inoremap fd <ESC>
 
-" Choose from recent files
+" CtrlP Mappings
 map <leader>fr :CtrlPMixed<CR>
+map <leader>bb :CtrlPBuffer<CR>
 
 " Project Files
 map <leader>pf :CtrlP<CR>
@@ -255,11 +257,11 @@ vnoremap <leader>gb :Gblame<CR>
 " Ranger
 nnoremap <leader>ar :Ranger<CR>
 
-" Window Movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+" " Window Movement
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-k> <C-w>k
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-l> <C-w>l
 
 " Linting Error Movement
 nnoremap ]r :ALENextWrap<CR>
@@ -276,7 +278,7 @@ vmap > >gv
 " Source init.vim every time it's saved
 augroup source_init_vim
     autocmd!
-    autocmd BufWritePost ~/.config/nvim/init.vim silent :source %
+    autocmd BufWritePost ~/.dotfiles/nvim/init.vim silent :source %
 augroup END
 
 " Delete Trailing Whitespace before saving

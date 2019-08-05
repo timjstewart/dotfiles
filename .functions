@@ -10,7 +10,7 @@ function ep() {
 # Git
 #===============================================================================
 
-fbr() {
+gfco() {
   local branches branch
   branches=$(git --no-pager branch -vv) &&
   branch=$(echo "$branches" | fzf +m) &&
@@ -29,7 +29,7 @@ FZF-EOF"
 }
 
 # From: https://revelry.co/terminal-workflow-fzf/
-gf() {
+gf_() {
   git -c color.status=always status --short |
   fzf --height 50% --border --ansi -multi --ansi --nth 2..,.. \
     --preview '(git diff --color=always -- {-1} | sed 1,4d; cat {-1}) | head -500' |

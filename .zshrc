@@ -120,3 +120,6 @@ eval "$(fasd --init auto)"
 export PATH="/usr/local/sbin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.aliases ] && source ~/.aliases
+[ -f ~/.functions ] && source ~/.functions
+
