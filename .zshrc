@@ -108,7 +108,6 @@ alias gmail='browse_url "https://gmail.com"'
 # ====
 alias entr_mypy='find . -iname "*.py" | entr -p mypy --ignore-missing-imports /_'
 
-export HOMEBREW_GITHUB_API_TOKEN=21b27afe642bf1c2091ba338668856cdd33229a8
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/STEWTJ3/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/STEWTJ3/bin/google-cloud-sdk/completion.zsh.inc'; fi

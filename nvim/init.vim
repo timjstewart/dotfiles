@@ -66,7 +66,7 @@ set mouse=a
 set smartindent
 
 " Automatically close folds when you exit them.
-set foldclose=all
+" set foldclose=all
 
 " Show the line and column number of the cursor (aka the ruler)
 set ruler
