@@ -65,9 +65,6 @@ set mouse=a
 " Indent the inserted lines to the same indent level as the current level.
 set smartindent
 
-" Automatically close folds when you exit them.
-" set foldclose=all
-
 " Show the line and column number of the cursor (aka the ruler)
 set ruler
 
@@ -103,7 +100,8 @@ set listchars=tab:▸\ ,eol:¬
 set inccommand=split
 
 " Ignore files I rarely care about.
-set wildignore+=*/.git/*,*/tmp/*,*.swp,*/venv/*,.DS_Store,*.pyc
+set wildignore+=*/.git/*,*/tmp/*,*.swp,*/venv/*,.DS_Store,*.pyc,tags
+
 
 "===============================================================================
 " Configure Global Variables
@@ -162,7 +160,6 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'francoiscabrol/ranger.vim'
-Plug 'tmhedberg/simpylfold'
 Plug 'zchee/deoplete-jedi'
 " Highlight what was yanked for a moment.
 Plug 'machakann/vim-highlightedyank'
@@ -172,9 +169,6 @@ call plug#end()
 "===============================================================================
 " Configure Plugins
 "===============================================================================
-
-" Do not fold doc strings
-let g:SimpylFold_fold_docstring = 0
 
 let g:deoplete#enable_at_startup = 1
 
@@ -227,6 +221,11 @@ let g:startify_bookmarks = [
 " DeleteTrailingWhitespace
 let g:DeleteTrailingWhitespace = 1
 let g:DeleteTrailingWhitespace_Action = 'delete'
+
+" Ripgrep
+let g:rg_derive_root=1
+let g:rg_command = 'rg --vimgrep -g ''!tags'''
+
 
 "===============================================================================
 " Keyboard Mappings
