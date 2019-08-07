@@ -292,12 +292,6 @@ vnoremap <leader>gb :Gblame<CR>
 " Ranger
 nnoremap <leader>ar :Ranger<CR>
 
-" " Window Movement
-" nnoremap <C-j> <C-w>j
-" nnoremap <C-k> <C-w>k
-" nnoremap <C-h> <C-w>h
-" nnoremap <C-l> <C-w>l
-
 " Linting Error Movement
 nnoremap ]r :ALENextWrap<CR>
 nnoremap [r :ALEPreviousWrap<CR>
