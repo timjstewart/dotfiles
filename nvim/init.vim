@@ -326,6 +326,7 @@ augroup END
 " Project Setup
 "===============================================================================
 
-" Turing (so that gf works on imports)
-set path+=~/src/pearson-turing/math-service/
+" Turing (so that gf works on imports).  The ** at the end of the path means
+" that the directory should be recursively searched.
+set path+=~/src/pearson-turing/math-service/**
 
