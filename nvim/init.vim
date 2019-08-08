@@ -10,6 +10,12 @@ filetype indent plugin on
 " Configure Settings
 "===============================================================================
 
+" Persistant Undo
+set undofile
+
+" Don't redraw screen during macro execution.  Use :redraw to force a redraw.
+set lazyredraw
+
 " Complete only until point of ambiguity
 set wildmode=list:longest
 
@@ -120,75 +126,108 @@ let g:python3_host_prog = '/usr/local/opt/python/libexec/bin/python'
 
 " Initialize vim-plug
 call plug#begin('~/.vim/plugged')
+
 " When vim starts, show recent files, bookmarks, etc.
 Plug 'mhinz/vim-startify'
+
 " A powerful snippet insertion plugin.
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'honza/vim-snippets'
+"
 " fzf integration
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
 " A directory/file viewer
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
 " Show modified lines in the gutter.
 Plug 'airblade/vim-gitgutter'
+
 " CtrlP interface for finding buffers, recent files, etc.
 Plug 'ctrlpvim/ctrlp.vim'
+
 " Fancier status line
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
 " Distraction free editing.
 Plug 'junegunn/goyo.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
 " Asynchronous Linter
 Plug 'dense-analysis/ale'
+
 " Exchange things like parameters
 Plug 'tommcdo/vim-exchange'
+
 " Tabulate text
 Plug 'godlygeek/tabular'
+
 " Find type errors in Python code.
 Plug 'integralist/vim-mypy'
+
 " Create Wiki Pages in vim
 Plug 'vimwiki/vimwiki'
+
 " Key mappings for navigating
 Plug 'tpope/vim-unimpaired'
+
 " gc to comment out selection
 Plug 'tpope/vim-commentary'
+
 " Clean up trailing whitespace whenever you save a file.
 Plug 'vim-scripts/DeleteTrailingWhitespace'
+
 " Manages your tags file for you.
 Plug 'ludovicchabant/vim-gutentags'
+
 " :Rg to search for text
 Plug 'jremmen/vim-ripgrep'
 Plug '/mileszs/ack.vim'
+
 " Improved source code indentation for Python
 Plug 'Vimjas/vim-python-pep8-indent'
+
 " Easily surround text objects with characters.
 Plug 'tpope/vim-surround'
+
 " Nice way of visualizing the undo history.
 Plug 'sjl/gundo.vim'
+
 " View JSON files in VIM with pinache.
 Plug 'elzr/vim-json'
+
 " Run tests from VIM.
 Plug 'janko-m/vim-test'
+
 " Use pipenv for Python files.
 Plug 'PieterjanMontens/vim-pipenv'
 Plug 'plytophogy/vim-virtualenv'
+
 " Navigate current file via a window on the side.
 Plug 'majutsushi/tagbar'
+
 " Support for the Dart language.  DartAnalyzer is slow!
 Plug 'dart-lang/dart-vim-plugin'
+
 " Git integration
 Plug 'tpope/vim-fugitive'
+
 " Sort of like iedit
 Plug 'terryma/vim-multiple-cursors'
+
 " Run Ranger in VIM
 Plug 'francoiscabrol/ranger.vim'
+
 " Completion for Python using jedi.
 Plug 'zchee/deoplete-jedi'
+
 " Highlight what was yanked for a moment.  See if this is useful.
 Plug 'machakann/vim-highlightedyank'
+
 " Makes embedding VIM in tmux and navigating around smoother.kk
 Plug 'christoomey/vim-tmux-navigator'
+
 call plug#end()
 
 "===============================================================================
@@ -287,7 +326,7 @@ nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>ga :Git add %:p<CR><CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gp :Gpush<CR>
-vnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gb :Gblame<CR>
 
 " Ranger
 nnoremap <leader>ar :Ranger<CR>
