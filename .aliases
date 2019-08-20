@@ -45,3 +45,10 @@ alias entr_mypy='find . -iname "*.py" | entr -p mypy --ignore-missing-imports /_
 
 alias gs='git status'
 alias gf='git fetch'
+
+#===============================================================================
+# Python
+#===============================================================================
+
+alias psh='pipenv shell'
+alias pydoc='python -m pydoc'

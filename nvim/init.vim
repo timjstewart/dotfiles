@@ -10,6 +10,14 @@ filetype indent plugin on
 " Configure Settings
 "===============================================================================
 
+" Split windows the way I would expect.
+set splitbelow
+set splitright
+
+" Use an interactive shell when issuing shell commands.  That way aliases are
+" defined.  It could be that this will make running shell commands slower.
+set shellcmdflag=-ic
+
 " Persistant Undo
 set undofile
 
@@ -116,13 +124,11 @@ set wildignore+=*/.git/*,*/tmp/*,*.swp,*/venv/*,.DS_Store,*.pyc,tags
 " Tell Neovim where to find Python 2 and 3 interpreters.
 let g:python_host_prog = '/usr/local/bin/python2.7'
 let g:python3_host_prog = '/usr/local/opt/python/libexec/bin/python'
+let g:virtualenv_directory = '/Users/STEWTJ3/.local/share/virtualenvs'
 
 "===============================================================================
 " Plugins
 "===============================================================================
-
-" To Consider:
-"  - unimpaired
 
 " Initialize vim-plug
 call plug#begin('~/.vim/plugged')
@@ -133,9 +139,9 @@ Plug 'mhinz/vim-startify'
 " A powerful snippet insertion plugin.
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'honza/vim-snippets'
-"
-" fzf integration
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 
 " A directory/file viewer
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -201,8 +207,8 @@ Plug 'elzr/vim-json'
 Plug 'janko-m/vim-test'
 
 " Use pipenv for Python files.
-Plug 'PieterjanMontens/vim-pipenv'
 Plug 'plytophogy/vim-virtualenv'
+Plug 'PieterjanMontens/vim-pipenv'
 
 " Navigate current file via a window on the side.
 Plug 'majutsushi/tagbar'
@@ -223,10 +229,16 @@ Plug 'francoiscabrol/ranger.vim'
 Plug 'zchee/deoplete-jedi'
 
 " Highlight what was yanked for a moment.  See if this is useful.
-Plug 'machakann/vim-highlightedyank'
+" Not as useful as I thought it would be.
+" Plug 'machakann/vim-highlightedyank'
 
-" Makes embedding VIM in tmux and navigating around smoother.kk
-Plug 'christoomey/vim-tmux-navigator'
+" Makes embedding VIM in tmux and navigating around smoother.
+" I found some key binding conflicts that make it hard to use so I'm trying my
+" own approch for now.
+" Plug 'christoomey/vim-tmux-navigator'
+
+" Show indent lines
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
@@ -258,7 +270,7 @@ set runtimepath+=~/.vim/my-snippets/
 if executable('rg')
   message "Configuring rg..."
   set grepprg=rg\ --color=never
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  "let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
   let g:ctrlp_use_caching = 0
 endif
 
@@ -305,6 +317,12 @@ let g:rg_command = 'rg --vimgrep -g ''!tags'''
 " Keyboard Mappings
 "===============================================================================
 
+" Disable Arrow keys
+map <Up> <nop>
+map <Down> <nop>
+map <Left> <nop>
+map <Right> <nop>
+
 " Map fd to allow quick exit from insert mode.
 inoremap fd <ESC>
 
@@ -338,6 +356,12 @@ nnoremap [r :ALEPreviousWrap<CR>
 " keep visual selection when indenting/outdenting
 vmap < <gv
 vmap > >gv
+
+" Window Movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 "===============================================================================
 " Autocommands

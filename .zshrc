@@ -1,8 +1,7 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/bin/flutter/bin:$PATH
-export PATH="$PATH":"$HOME/.pub-cache/bin"
-export EDITOR=e
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+#export PATH=$HOME/bin/flutter/bin:$PATH
+#export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/STEWTJ3/.oh-my-zsh"
@@ -60,7 +59,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-. /usr/local/etc/profile.d/z.sh
+#. /usr/local/etc/profile.d/z.sh
 
 function ep() {
 	e $(find . -iname '*.py' | grep -v /venv/ | fzf)
@@ -116,10 +115,25 @@ setopt auto_cd
 cdpath=(. $HOME/src)
 
 # Install fasd hooks.  Seems to be a bit slow but it might be worth it.
-eval "$(fasd --init auto)"
+#eval "$(fasd --init auto)"
 export PATH="/usr/local/sbin:$PATH"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.aliases ] && source ~/.aliases
 [ -f ~/.functions ] && source ~/.functions
 
+set -o vi
+bindkey "^R" history-incremental-search-backward
+
+# FROM: https://github.com/b4b4r07/zle-vimode/blob/master/zle-vimode.zsh
+bindkey -M viins '^A'  beginning-of-line
+bindkey -M viins '^D'  delete-char-or-list
+bindkey -M viins '^E'  end-of-line
+bindkey -M viins '^F'  forward-char
+bindkey -M viins '^H'  backward-delete-char
+bindkey -M viins '^K'  kill-line
+bindkey -M viins '^N'  down-line-or-history
+bindkey -M viins '^P'  up-line-or-history
+bindkey -M viins '^R'  history-incremental-pattern-search-backward
+bindkey -M viins '^U'  backward-kill-line
+bindkey -M viins '^W'  backward-kill-word
