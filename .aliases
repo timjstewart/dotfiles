@@ -19,7 +19,7 @@ alias vi=nvim
 #===============================================================================
 
 # All PRs for Turing
-alias prs='browse_url "https://github.com/doberman/pearson-turing/pulls"'
+alias prs='~/scripts/_gh/prs'
 # All PRs I created
 alias prsm='browse_url "https://github.com/doberman/pearson-turing/pulls/timjstewart"'
 # All PRs Waiting for me
@@ -52,3 +52,5 @@ alias gf='git fetch'
 
 alias psh='pipenv shell'
 alias pydoc='python -m pydoc'
+
+alias m='cd ~/src/pearson-turing/math-service ; psh'

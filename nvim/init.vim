@@ -10,6 +10,12 @@ filetype indent plugin on
 " Configure Settings
 "===============================================================================
 
+" Always show tabs
+set showtabline=2
+
+" terminal color enhancements
+set termguicolors
+
 " Split windows the way I would expect.
 set splitbelow
 set splitright
@@ -126,12 +132,21 @@ let g:python_host_prog = '/usr/local/bin/python2.7'
 let g:python3_host_prog = '/usr/local/opt/python/libexec/bin/python'
 let g:virtualenv_directory = '/Users/STEWTJ3/.local/share/virtualenvs'
 
+" Use NERDTree instead of netrw.
+let g:NERDTreeHijackNetrw = 1
+
 "===============================================================================
 " Plugins
 "===============================================================================
 
 " Initialize vim-plug
 call plug#begin('~/.vim/plugged')
+
+" Integration between VIM and IPython.  Troubleshooting required.
+" Plug 'ivanov/vim-ipython'
+
+" For improved focus....  Too much focus.  Tweaking needed.
+" Plug 'junegunn/limelight.vim'
 
 " When vim starts, show recent files, bookmarks, etc.
 Plug 'mhinz/vim-startify'
@@ -147,7 +162,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 " Show modified lines in the gutter.
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 
 " CtrlP interface for finding buffers, recent files, etc.
 Plug 'ctrlpvim/ctrlp.vim'
@@ -157,7 +172,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Distraction free editing.
-Plug 'junegunn/goyo.vim'
+" Plug 'junegunn/goyo.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Asynchronous Linter
@@ -207,14 +222,14 @@ Plug 'elzr/vim-json'
 Plug 'janko-m/vim-test'
 
 " Use pipenv for Python files.
-Plug 'plytophogy/vim-virtualenv'
-Plug 'PieterjanMontens/vim-pipenv'
+"Plug 'plytophogy/vim-virtualenv'
+"Plug 'PieterjanMontens/vim-pipenv'
 
 " Navigate current file via a window on the side.
 Plug 'majutsushi/tagbar'
 
 " Support for the Dart language.  DartAnalyzer is slow!
-Plug 'dart-lang/dart-vim-plugin'
+" Plug 'dart-lang/dart-vim-plugin'
 
 " Git integration
 Plug 'tpope/vim-fugitive'
@@ -240,11 +255,46 @@ Plug 'zchee/deoplete-jedi'
 " Show indent lines
 Plug 'Yggdroot/indentLine'
 
+
+Plug 'rafi/awesome-vim-colorschemes'
+
 call plug#end()
+
+"===============================================================================
+" Set colorscheme now that the colorscheme plugin has loaded.
+"===============================================================================
+
+"colorscheme elflord
+"colorscheme koehler
+"colorscheme desert
+"colorscheme ayu
+"colorscheme dracula
+"colorscheme afterglow
+"colorscheme parsec
+"colorscheme materialbox
+colorscheme jellybeans
 
 "===============================================================================
 " Configure Plugins
 "===============================================================================
+
+" ALE
+let g:ale_sign_error = "◉"
+let g:ale_sign_warning = "◉"
+highlight ALEErrorSign ctermfg=9 ctermbg=0 guifg=#C30500 guibg=#000000
+highlight ALEWarningSign ctermfg=11 ctermbg=0 guifg=#ED6237 guibg=#000000
+let g:ale_python_auto_pipenv = 1
+let g:ale_python_pylint_auto_pipenv = 1
+
+" Airline
+let g:airline_theme='cobalt2'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline#extensions#tabline#tab_nr_type= 2
+let g:airline#extensions#tabline#show_tab_type = 1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+
 
 " Tagbar
 " let g:tagbar_autoclose = 1
@@ -311,6 +361,9 @@ let g:DeleteTrailingWhitespace_Action = 'delete'
 " Ripgrep
 let g:rg_derive_root=1
 let g:rg_command = 'rg --vimgrep -g ''!tags'''
+
+" Browsing
+let g:netrw_browsex_viewer= "open"
 
 
 "===============================================================================

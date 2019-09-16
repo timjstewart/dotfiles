@@ -1,7 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 #export PATH=$HOME/bin/flutter/bin:$PATH
 #export PATH="$PATH":"$HOME/.pub-cache/bin"
+export EDITOR=nvim
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/STEWTJ3/.oh-my-zsh"
@@ -21,7 +22,7 @@ ZSH_THEME="bullet-train"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -137,3 +138,6 @@ bindkey -M viins '^P'  up-line-or-history
 bindkey -M viins '^R'  history-incremental-pattern-search-backward
 bindkey -M viins '^U'  backward-kill-line
 bindkey -M viins '^W'  backward-kill-word
+
+[[ -r ~/.credentials ]] && source ~/.credentials
+
