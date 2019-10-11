@@ -145,11 +145,16 @@ call plug#begin('~/.vim/plugged')
 " Integration between VIM and IPython.  Troubleshooting required.
 " Plug 'ivanov/vim-ipython'
 
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-dispatch'
 " For improved focus....  Too much focus.  Tweaking needed.
 " Plug 'junegunn/limelight.vim'
 
 " When vim starts, show recent files, bookmarks, etc.
 Plug 'mhinz/vim-startify'
+
+" UNIX commandtpope/vim-eunuchs
+Plug 'tpope/vim-eunuch'
 
 " A powerful snippet insertion plugin.
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
@@ -162,7 +167,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 " Show modified lines in the gutter.
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
 " CtrlP interface for finding buffers, recent files, etc.
 Plug 'ctrlpvim/ctrlp.vim'
@@ -212,8 +217,8 @@ Plug 'Vimjas/vim-python-pep8-indent'
 " Easily surround text objects with characters.
 Plug 'tpope/vim-surround'
 
-" Nice way of visualizing the undo history.
-Plug 'sjl/gundo.vim'
+" " Nice way of visualizing the undo history.
+" Plug 'sjl/gundo.vim'
 
 " View JSON files in VIM with pinache.
 Plug 'elzr/vim-json'
@@ -228,9 +233,6 @@ Plug 'janko-m/vim-test'
 " Navigate current file via a window on the side.
 Plug 'majutsushi/tagbar'
 
-" Support for the Dart language.  DartAnalyzer is slow!
-" Plug 'dart-lang/dart-vim-plugin'
-
 " Git integration
 Plug 'tpope/vim-fugitive'
 
@@ -239,13 +241,10 @@ Plug 'terryma/vim-multiple-cursors'
 
 " Run Ranger in VIM
 Plug 'francoiscabrol/ranger.vim'
+Plug 'rbgrouleff/bclose.vim'
 
 " Completion for Python using jedi.
 Plug 'zchee/deoplete-jedi'
-
-" Highlight what was yanked for a moment.  See if this is useful.
-" Not as useful as I thought it would be.
-" Plug 'machakann/vim-highlightedyank'
 
 " Makes embedding VIM in tmux and navigating around smoother.
 " I found some key binding conflicts that make it hard to use so I'm trying my
@@ -253,8 +252,9 @@ Plug 'zchee/deoplete-jedi'
 " Plug 'christoomey/vim-tmux-navigator'
 
 " Show indent lines
-Plug 'Yggdroot/indentLine'
+"Plug 'Yggdroot/indentLine'
 
+Plug 'jceb/vim-orgmode'
 
 Plug 'rafi/awesome-vim-colorschemes'
 
@@ -285,6 +285,13 @@ highlight ALEErrorSign ctermfg=9 ctermbg=0 guifg=#C30500 guibg=#000000
 highlight ALEWarningSign ctermfg=11 ctermbg=0 guifg=#ED6237 guibg=#000000
 let g:ale_python_auto_pipenv = 1
 let g:ale_python_pylint_auto_pipenv = 1
+
+" Ranger
+let g:ranger_map_keys = 0
+nnoremap <leader>r :Ranger<CR>
+
+" FZF
+nnoremap <leader>s :Ag<CR>
 
 " Airline
 let g:airline_theme='cobalt2'
@@ -323,6 +330,9 @@ if executable('rg')
   "let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
   let g:ctrlp_use_caching = 0
 endif
+let g:ctrlp_by_filename = 0
+let g:ctrlp_match_window = 'top,order:ttb'
+let g:ctrlp_match_current_file = 1
 
 " NERDTree
 let NERDTreeMinimalUI = 1
@@ -382,6 +392,8 @@ inoremap fd <ESC>
 " CtrlP Mappings
 map <leader>fr :CtrlPMixed<CR>
 map <leader>bb :CtrlPBuffer<CR>
+
+" Tagbar Mappings
 map <leader>ji :TagbarOpenAutoClose<CR>
 
 " Project Files
@@ -389,7 +401,7 @@ map <leader>pf :CtrlP<CR>
 
 " Edit alternate file
 nmap <leader><tab> <C-^>
-"
+
 " Remove search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
