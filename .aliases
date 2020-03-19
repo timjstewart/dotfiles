@@ -54,3 +54,6 @@ alias psh='pipenv shell'
 alias pydoc='python -m pydoc'
 
 alias m='cd ~/src/pearson-turing/math-service ; psh'
+
+
+alias turing='tmuxp load ~/tmux/turing.yaml'

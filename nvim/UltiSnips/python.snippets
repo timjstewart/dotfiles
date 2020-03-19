@@ -1,0 +1,122 @@
+snippet ct "Check a value's type"
+if not isinstance(${1:value}, ${2:type}):
+	raise TypeError(
+		f"$1 must be of type: $2, not {type($1}}")
+endsnippet
+
+snippet _i "__init__ function"
+def __init__(self${1:, args}) -> None:
+	$0
+endsnippet
+
+snippet _s "__str__ method"
+def __str__(self) -> str:
+	return f"$0"
+endsnippet
+
+snippet _r "__repr__ method"
+def __repr__(self) -> str:
+	return f"{self.__class__.__name__}($0)"
+endsnippet
+
+snippet nt "NamedTuple Instance" b
+class ${1:name}(NamedTuple):
+	${2:attribute}: ${3:type}
+	$0
+endsnippet
+
+snippet en "Enum Class" b
+class ${1:name}(Enum):
+	${2:attribute} = auto()
+	$0
+endsnippet
+
+snippet me "method"
+def ${1:method_name}(self${2:, args}) -> ${3:None}:
+	$0
+endsnippet
+
+snippet fu "function"
+def ${1:function_name}(${2:args}) -> ${3:None}:
+	$0
+endsnippet
+
+snippet su "super()" b
+super().__init__($0)
+endsnippet
+
+# snippet testing "Testing Snippet"
+# `!p var = 10` ${1:FIRST} `!p
+# if snip.v.text:
+#     snip.rv = f"Visual: {snip.v.text.strip()}"
+# else:
+#     snip.rv = "Nothing"
+# snip.rv += f' TabStops : {t[1]}'
+# snip.rv += f' FileName: {snip.fn}'
+# snip.rv += f' BaseName: {snip.basename}'
+# snip.rv += f' FileType: {snip.ft}'
+# snip.rv += f' Var: {var}'
+# `
+# endsnippet
+
+snippet iid
+ItemId(${1:Chapter}, ${2:Section}, ${3:Exercise}, ${4:None})
+endsnippet
+
+snippet sa "self assign"
+self.${1:variable} = $1$0
+endsnippet
+
+snippet pdb "Insert Breakpoint"
+import pudb; pudb.set_trace()
+endsnippet
+
+snippet LOG "Module Logger"
+import logging
+
+_LOGGER = logging.getLogger(__name__)
+endsnippet
+
+snippet fi "from MODULE import"
+from ${1:module} import $0
+endsnippet
+
+snippet wrn "Log Warning"
+_LOGGER.warning("$1", $0)
+endsnippet
+
+snippet inf "Log Warning"
+_LOGGER.info("$1", $0)
+endsnippet
+
+snippet err "Log Warning"
+_LOGGER.error("$1", $0)
+endsnippet
+
+snippet deb "Log Warning"
+_LOGGER.debug("$1", $0)
+endsnippet
+
+snippet p "Typed Parameter"
+${1:name}: ${2:type}
+endsnippet
+
+snippet pr "Print f-string"
+print(f"$1 {$2}$0", flush=True)
+endsnippet
+
+snippet sm "Static Method"
+@staticmethod
+def ${1:method_name}(${2:arguments}) -> ${3:Type}:
+	$0
+endsnippet
+
+snippet li "loop with index"
+for ${1:index}, ${2:item} in enumerate(${3:iterable}${4:, 1}):
+	$0
+endsnippet
+
+snippet lo "loop over iterable"
+for ${1:item} in ${2:iterable}:
+	$0
+endsnippet
