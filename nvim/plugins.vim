@@ -106,6 +106,8 @@ Plug 'jceb/vim-orgmode'
 Plug 'rafi/awesome-vim-colorschemes'
 
 Plug 'tpope/vim-rhubarb'
+" Gitlab Support
+Plug 'shumphrey/fugitive-gitlab.vim'
 
 " Show indentation markers (messes up Ranger)
 " Plug 'yggdroot/indentline'
@@ -132,6 +134,14 @@ Plug 'sjl/gundo.vim'
 Plug 'pechorin/any-jump.vim'
 
 Plug 'easymotion/vim-easymotion'
+
+Plug 'ryanoasis/vim-devicons'
+
+Plug 'axvr/zepl.vim'
+
+" Sandy Colorscheme
+Plug 'arzg/vim-corvine'
+Plug 'nightsense/cosmic_latte'
 
 call plug#end()
 

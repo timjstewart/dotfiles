@@ -8,4 +8,19 @@ runtime plugins.vim
 runtime plugins-config.vim
 runtime mappings.vim
 runtime autocommands.vim
-colorscheme jellybeans
+
+colorscheme cosmic_latte
+
+"===============================================================================
+" Colorschemes I like
+"===============================================================================
+
+"colorscheme jellybeans
+"colorscheme elflord
+"colorscheme koehler
+"colorscheme desert
+"colorscheme ayu
+"colorscheme dracula
+"colorscheme afterglow
+"colorscheme parsec
+"colorscheme materialbox

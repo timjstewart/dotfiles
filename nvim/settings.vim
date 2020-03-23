@@ -126,19 +126,6 @@ set inccommand=split
 " Ignore files I rarely care about.
 set wildignore+=*/.git/*,*/tmp/*,*.swp,*/venv/*,.DS_Store,*.pyc,tags
 
-"===============================================================================
-" Set colorscheme now that the colorscheme plugin has loaded.
-"===============================================================================
-
-"colorscheme elflord
-"colorscheme koehler
-"colorscheme desert
-"colorscheme ayu
-"colorscheme dracula
-"colorscheme afterglow
-"colorscheme parsec
-"colorscheme materialbox
-
 "
 "===============================================================================
 " Project Setup
