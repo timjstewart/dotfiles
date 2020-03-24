@@ -7,7 +7,7 @@
 let g:NERDTreeHijackNetrw = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
-let g:NERDTreeWinSize = 10
+let g:NERDTreeWinSize = 30
 
 " ALE
 let g:ale_linters_explicit = 1
@@ -124,7 +124,7 @@ if executable('rg')
 endif
 
 let g:ctrlp_by_filename = 0
-let g:ctrlp_match_window = 'top,order:ttb'
+"let g:ctrlp_match_window = 'top,order:ttb'
 let g:ctrlp_match_current_file = 1
 
 let g:ctrlp_extensions = ['tag', 'dir', 'mixed', 'bookmarkdir']

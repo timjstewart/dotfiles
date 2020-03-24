@@ -6,21 +6,7 @@ let g:virtualenv_directory = '/Users/STEWTJ3/.local/share/virtualenvs'
 runtime settings.vim
 runtime plugins.vim
 runtime plugins-config.vim
+runtime colorscheme.vim
 runtime mappings.vim
 runtime autocommands.vim
 
-colorscheme cosmic_latte
-
-"===============================================================================
-" Colorschemes I like
-"===============================================================================
-
-"colorscheme jellybeans
-"colorscheme elflord
-"colorscheme koehler
-"colorscheme desert
-"colorscheme ayu
-"colorscheme dracula
-"colorscheme afterglow
-"colorscheme parsec
-"colorscheme materialbox

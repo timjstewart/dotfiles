@@ -118,8 +118,8 @@ Plug 'junegunn/goyo.vim'
 
 Plug 'skywind3000/asyncrun.vim'
 
-Plug 'camspiers/lens.vim'
-Plug 'camspiers/animate.vim'
+"Plug 'camspiers/lens.vim'
+"Plug 'camspiers/animate.vim'
 
 " Needs colorscheme work (line numbers look funny)
 " Plug 'blueyed/vim-diminactive'
@@ -133,7 +133,8 @@ Plug 'sjl/gundo.vim'
 
 Plug 'pechorin/any-jump.vim'
 
-Plug 'easymotion/vim-easymotion'
+" Interferes with <leader><leader>
+" Plug 'easymotion/vim-easymotion'
 
 Plug 'ryanoasis/vim-devicons'
 
@@ -142,6 +143,8 @@ Plug 'axvr/zepl.vim'
 " Sandy Colorscheme
 Plug 'arzg/vim-corvine'
 Plug 'nightsense/cosmic_latte'
+
+Plug 'blindFS/vim-taskwarrior'
 
 call plug#end()
 
