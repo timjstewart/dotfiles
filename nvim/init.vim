@@ -9,4 +9,3 @@ runtime plugins-config.vim
 runtime colorscheme.vim
 runtime mappings.vim
 runtime autocommands.vim
-

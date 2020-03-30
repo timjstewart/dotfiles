@@ -8,6 +8,8 @@ let g:NERDTreeHijackNetrw = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeWinSize = 30
+let g:NERDTreeQuitOnOpen = 3  " close after opening bookmark or file.
+let g:NERDTreeShowBookmarks = 1
 
 " ALE
 let g:ale_linters_explicit = 1
@@ -185,3 +187,18 @@ let g:jedi#completions_command = ""
 let g:jedi#show_call_signatures = "2"
 
 let g:lens#disabled_filetypes = ['nerdtree']
+
+let g:Tlist_Close_On_Select = 1
+let g:Tlist_Show_One_File = 1
+let g:Tlist_Use_Right_Window = 1
+let g:Tlist_Sort_Type = "name"
+let g:Tlist_GainFocus_On_ToggleOpen = 1
+let g:Tlist_Auto_Highlight_Tag = 0  " Slow!
+let g:Tlist_Compact_Format = 1
+let g:Tlist_Display_Prototype = 1
+let g:Tlist_WinWidth = 40
+
+" Skeletons
+
+let skeletons#autoRegister = 1
+let skeletons#skeletonsDir = "~/.config/nvim/skeletons"

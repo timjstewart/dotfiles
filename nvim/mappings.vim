@@ -72,4 +72,5 @@ nnoremap <leader>t :20sp +terminal <CR> i
 nnoremap <f5> :Rg <C-r><C-w><CR>
 nnoremap <S-f5> :Rg "<C-r><C-a>"<CR>
 
-nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeFind<CR>
+nnoremap <leader>l :TlistToggle<CR>

@@ -27,7 +27,8 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
 " A directory/file viewer
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeFind' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " CtrlP interface for finding buffers, recent files, etc.
 Plug 'ctrlpvim/ctrlp.vim'
@@ -145,6 +146,12 @@ Plug 'arzg/vim-corvine'
 Plug 'nightsense/cosmic_latte'
 
 Plug 'blindFS/vim-taskwarrior'
+
+Plug 'tpope/vim-dadbod'
+
+Plug 'vim-scripts/taglist.vim'
+
+Plug 'pgilad/vim-skeletons'
 
 call plug#end()
 
