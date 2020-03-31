@@ -140,3 +140,4 @@ set complete-=i   " disable scanning included files from <c-n> and <c-p>.
 " 999 was too visually jarring for me
 set scrolloff=3
 
+set suffixesadd=.py

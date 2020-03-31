@@ -8,7 +8,7 @@ let g:NERDTreeHijackNetrw = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeWinSize = 30
-let g:NERDTreeQuitOnOpen = 3  " close after opening bookmark or file.
+let g:NERDTreeQuitOnOpen = 0  " close after opening bookmark or file.
 let g:NERDTreeShowBookmarks = 1
 
 " ALE

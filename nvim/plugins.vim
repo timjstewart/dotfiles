@@ -27,8 +27,7 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
 " A directory/file viewer
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeFind' }
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 " CtrlP interface for finding buffers, recent files, etc.
 Plug 'ctrlpvim/ctrlp.vim'
@@ -96,7 +95,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
 
 " Run Ranger in VIM
-Plug 'francoiscabrol/ranger.vim'
+" Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
 
 " Completion for Python using jedi.
