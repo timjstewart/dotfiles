@@ -147,6 +147,7 @@ Plug 'nightsense/cosmic_latte'
 Plug 'blindFS/vim-taskwarrior'
 
 Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
 
 Plug 'vim-scripts/taglist.vim'
 

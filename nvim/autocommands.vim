@@ -13,3 +13,12 @@ augroup cursorline_ag
     autocmd InsertLeave,WinEnter * set cursorline
     autocmd InsertEnter,WinLeave * set nocursorline
 augroup END
+
+
+" augroup startup
+"     autocmd!
+"     " Start NERDTree
+"     autocmd VimEnter * NERDTree
+"     " Jump to the main window.
+"     autocmd VimEnter * wincmd p
+" augroup END

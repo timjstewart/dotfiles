@@ -10,6 +10,7 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeWinSize = 30
 let g:NERDTreeQuitOnOpen = 0  " close after opening bookmark or file.
 let g:NERDTreeShowBookmarks = 1
+let NERDTreeShowLineNumbers=1  " Not relative line numbers.
 
 " ALE
 let g:ale_linters_explicit = 1
@@ -202,3 +203,7 @@ let g:Tlist_WinWidth = 40
 
 let skeletons#autoRegister = 1
 let skeletons#skeletonsDir = "~/.config/nvim/skeletons"
+
+" Dadbod UI
+
+let g:db_ui_auto_execute_table_helpers = 1
