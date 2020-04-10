@@ -109,8 +109,8 @@ Plug 'tpope/vim-rhubarb'
 " Gitlab Support
 Plug 'shumphrey/fugitive-gitlab.vim'
 
-" Show indentation markers (messes up Ranger)
-" Plug 'yggdroot/indentline'
+" Show indentation markers
+Plug 'yggdroot/indentline'
 
 Plug 'aquach/vim-http-client'
 
@@ -152,6 +152,13 @@ Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'vim-scripts/taglist.vim'
 
 Plug 'pgilad/vim-skeletons'
+
+" pyenv and ipython integration issues.
+" Plug 'urbainvaes/vim-ripple'
+" " Optional dependency for vim-ripple
+" Plug 'machakann/vim-highlightedyank'
+
+Plug 'rbong/vim-flog'
 
 call plug#end()
 

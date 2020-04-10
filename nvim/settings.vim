@@ -26,7 +26,7 @@ set splitright
 
 " Use an interactive shell when issuing shell commands.  That way aliases are
 " defined.  It could be that this will make running shell commands slower.
-set shellcmdflag=-ic
+set shellcmdflag=-c
 
 " Persistant Undo
 set undofile

@@ -3,32 +3,37 @@
 " Configure Plugins
 "===============================================================================
 
-" Don't use NERDTree instead of netrw.
-let g:NERDTreeHijackNetrw = 1
-let g:NERDTreeDirArrowExpandable = '▸'
+" NERDTree
+"
 let g:NERDTreeDirArrowCollapsible = '▾'
-let g:NERDTreeWinSize = 30
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeHijackNetrw = 1
+let g:NERDTreeMinimalUI = 1
 let g:NERDTreeQuitOnOpen = 0  " close after opening bookmark or file.
 let g:NERDTreeShowBookmarks = 1
-let NERDTreeShowLineNumbers=1  " Not relative line numbers.
+let g:NERDTreeShowLineNumbers = 1  " Not relative line numbers.
+let g:NERDTreeWinSize = 30
+
 
 " ALE
+"
 let g:ale_linters_explicit = 1
 let g:ale_python_mypy_options = '--follow-imports skip --ignore-missing-imports'
 let g:ale_cache_executable_check_failures = 0
 let g:ale_python_mypy_use_global = 1
 let g:ale_python_mypy_auto_pipenv = 0
 let g:ale_open_list = 0
+let g:ale_sign_error = "✗"
+let g:ale_sign_warning = "⚠"
+let g:ale_python_mypy_executable = '/Users/STEWTJ3/.local/bin/mypy'
+let b:ale_warn_about_trailing_whitespace = 1
 let g:ale_linters = {
    \ 'python': ['flake8', 'pylint', 'mypy'],
    \ }
 let b:ale_fixers = {
    \ 'python': ['autopep8', 'black'],
    \ }
-let g:ale_sign_error = "✗"
-let g:ale_sign_warning = "⚠"
-let g:ale_python_mypy_executable = '/Users/STEWTJ3/.local/bin/mypy'
-let b:ale_warn_about_trailing_whitespace = 1
 highlight ALEErrorSign ctermfg=9 ctermbg=15 guifg=#C30500 guibg=#F5F5F5
 highlight ALEWarningSign ctermfg=11 ctermbg=15 guifg=#ED6237 guibg=#F5F5F5
 "let g:ale_python_auto_pipenv = 1
@@ -59,27 +64,26 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#ale#enabled = 1
 
 
+" " Tagbar
+" " let g:tagbar_autoclose = 1
+" let g:tagbar_autofocus = 1
+" let g:tagbar_sort = 1
+" let g:tagbar_case_insensitive = 1
+" let g:tagbar_compact = 1
+" " Auto preview window does not go away
+" let g:tagbar_autopreview = 0
 
-" Tagbar
-" let g:tagbar_autoclose = 1
-let g:tagbar_autofocus = 1
-let g:tagbar_sort = 1
-let g:tagbar_case_insensitive = 1
-let g:tagbar_compact = 1
-" Auto preview window does not go away
-let g:tagbar_autopreview = 0
 
+" " Deoplete
+"
+" let g:deoplete#enable_at_startup = 1
 
-let g:deoplete#enable_at_startup = 1
-
-" Set ultisnips triggers
+" UltiSnips
+"
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-" NERDTree
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
 
 " Startify
 
@@ -126,8 +130,8 @@ if executable('rg')
   let g:ctrlp_use_caching = 0
 endif
 
-let g:ctrlp_by_filename = 0
-"let g:ctrlp_match_window = 'top,order:ttb'
+let g:ctrlp_by_filename = 1
+let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_match_current_file = 1
 
 let g:ctrlp_extensions = ['tag', 'dir', 'mixed', 'bookmarkdir']
@@ -167,16 +171,9 @@ let g:goyo_linenr=1
 let g:goyo_width=120
 
 
-" autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=menuone,noselect,noinsert
 set shortmess+=c
 inoremap <c-c> <ESC>
-" make it fast
-" let ncm2#popup_delay = 5
-" let ncm2#complete_length = [[1, 1]]
-" Use new fuzzy based matches
-" let g:ncm2#matcher = 'substrfuzzy'
-
 
 " Disable Jedi-vim autocompletion and enable call-signatures options
 let g:jedi#auto_initialization = 1
@@ -188,6 +185,8 @@ let g:jedi#completions_command = ""
 let g:jedi#show_call_signatures = "2"
 
 let g:lens#disabled_filetypes = ['nerdtree']
+
+" Taglist
 
 let g:Tlist_Close_On_Select = 1
 let g:Tlist_Show_One_File = 1
@@ -207,3 +206,11 @@ let skeletons#skeletonsDir = "~/.config/nvim/skeletons"
 " Dadbod UI
 
 let g:db_ui_auto_execute_table_helpers = 1
+
+
+" " Ripple
+
+" let g:ripple_enable_mappings = 1
+" let g:default_repls = {
+"             \ "python": ["~/.pyenv/shims/ipython", "\<c-u>\<esc>[200~", "\<esc>[201~", 1],
+"             \ }

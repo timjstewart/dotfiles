@@ -75,10 +75,10 @@ This function should only modify configuration layer settings."
             shell-default-position 'bottom
             shell-default-term-shell "/usr/local/bin/zsh"
             shell-default-height 30)
-     (ranger :variables
-             ranger-show-hidden t
-             ranger-override-dired t
-             ranger-override-dired-mode t)
+     ;(ranger :variables
+     ;        ranger-show-hidden t
+     ;        ranger-override-dired t
+     ;        ranger-override-dired-mode t)
      git
      tmux
      restclient
@@ -117,7 +117,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(importmagic company)
+   dotspacemacs-excluded-packages '()
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -376,12 +376,12 @@ It should only modify the values of Spacemacs settings."
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
-   dotspacemacs-active-transparency 60
+   dotspacemacs-active-transparency 80
 
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's inactive or deselected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
-   dotspacemacs-inactive-transparency 60
+   dotspacemacs-inactive-transparency 80
 
    ;; If non-nil show the titles of transient states. (default t)
    dotspacemacs-show-transient-state-title t
