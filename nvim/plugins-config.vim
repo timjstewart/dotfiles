@@ -131,7 +131,7 @@ if executable('rg')
 endif
 
 let g:ctrlp_by_filename = 1
-let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_match_window = 'bottom,order:btt'
 let g:ctrlp_match_current_file = 1
 
 let g:ctrlp_extensions = ['tag', 'dir', 'mixed', 'bookmarkdir']

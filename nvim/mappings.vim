@@ -49,9 +49,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" Lf File Manager
-nnoremap <leader>o :LfCurrentFileNewTab<CR>
-
 " FZF
 nnoremap <leader>s :Ag<CR>
 
@@ -74,5 +71,13 @@ nnoremap <leader>t :20sp +terminal <CR> i
 nnoremap <f5> :Rg <C-r><C-w><CR>
 nnoremap <S-f5> :Rg "<C-r><C-a>"<CR>
 
-nnoremap <leader>n :NERDTreeToggle<CR>
-nnoremap <leader>l :TlistToggle<CR>
+" NERDTree mappings
+nnoremap <leader>nt :NERDTreeToggle<CR>
+nnoremap <leader>nf :NERDTreeFind<CR>
+
+" vim mappings
+nnoremap <leader>ve :vsplit $MYVIMRC<cr>
+nnoremap <leader>vs :source $MYVIMRC<cr>
+
+" Turn spelling on/off.
+nnoremap <leader>st :set spell!<cr>

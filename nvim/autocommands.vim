@@ -22,3 +22,11 @@ augroup END
 "     " Jump to the main window.
 "     autocmd VimEnter * wincmd p
 " augroup END
+"
+
+" TODO: Find better color
+" augroup highlight_current_identifier
+"     autocmd!
+"     autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+" augroup END
+

@@ -7,8 +7,9 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'jpalardy/vim-slime'
 
+" I don't really use these.
 " Plug 'mcchrish/nnn.vim'
-Plug 'ptzz/lf.vim'
+" Plug 'ptzz/lf.vim'
 
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-dispatch'
@@ -51,8 +52,9 @@ Plug 'dense-analysis/ale'
 " Exchange things like parameters
 Plug 'tommcdo/vim-exchange'
 
+" I don't have a use for this in Python
 " Tabulate text
-Plug 'godlygeek/tabular'
+" Plug 'godlygeek/tabular'
 
 " Find type errors in Python code.
 Plug 'integralist/vim-mypy'
@@ -74,7 +76,7 @@ Plug 'ludovicchabant/vim-gutentags'
 
 " :Rg to search for text
 Plug 'jremmen/vim-ripgrep'
-Plug '/mileszs/ack.vim'
+Plug 'mileszs/ack.vim'
 
 " Improved source code indentation for Python
 Plug 'Vimjas/vim-python-pep8-indent'
@@ -127,9 +129,11 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'Konfekt/FastFold'
 Plug 'kalekundert/vim-coiled-snake'
 
-Plug 'rhysd/git-messenger.vim'
+" I just don't use this
+" Plug 'rhysd/git-messenger.vim'
 
-Plug 'sjl/gundo.vim'
+" I just don't use this
+" Plug 'sjl/gundo.vim'
 
 Plug 'pechorin/any-jump.vim'
 
@@ -158,7 +162,12 @@ Plug 'pgilad/vim-skeletons'
 " " Optional dependency for vim-ripple
 " Plug 'machakann/vim-highlightedyank'
 
-Plug 'rbong/vim-flog'
+" Buggy
+" Fugitive Extensions
+" Plug 'sodapopcan/vim-twiggy'
+
+
+Plug 'python-rope/ropevim'
 
 call plug#end()
 

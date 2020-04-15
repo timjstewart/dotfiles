@@ -58,6 +58,7 @@ set clipboard+=unnamedplus
 
 " Remap the leader so I can can have some common key bindings with Spacemacs.
 let mapleader=" "
+let maplocalleader="\\"
 
 " Ignore case
 set ignorecase
