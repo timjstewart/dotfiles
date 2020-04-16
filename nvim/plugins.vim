@@ -1,6 +1,9 @@
-"===============================================================================
-" Plugins
-"===============================================================================
+"        _             _
+"  _ __ | |_   _  __ _(_)_ __  ___
+" | '_ \| | | | |/ _` | | '_ \/ __|
+" | |_) | | |_| | (_| | | | | \__ \
+" | .__/|_|\__,_|\__, |_|_| |_|___/
+" |_|            |___/
 
 " Initialize vim-plug
 call plug#begin('~/.vim/plugged')
@@ -101,7 +104,9 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'rbgrouleff/bclose.vim'
 
 " Completion for Python using jedi.
-Plug 'zchee/deoplete-jedi'
+" Plug 'zchee/deoplete-jedi'
+"
+Plug 'ycm-core/YouCompleteMe'
 
 Plug 'jceb/vim-orgmode'
 
