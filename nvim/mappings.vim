@@ -4,9 +4,6 @@
 " | | | | | | (_| | |_) | |_) | | | | | (_| \__ \
 " |_| |_| |_|\__,_| .__/| .__/|_|_| |_|\__, |___/
 "                 |_|   |_|            |___/
-"===============================================================================
-" Keyboard Mappings
-"===============================================================================
 
 " Disable Arrow keys
 map <Up> <nop>
@@ -36,9 +33,6 @@ nnoremap <leader>ga :Git add %:p<CR><CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gp :Gpush<CR>
 nnoremap <leader>gb :Gblame<CR>
-
-" Ranger
-" nnoremap <leader>ar :Ranger<CR>
 
 " Linting Error Movement
 nnoremap ]r :ALENextWrap<CR>

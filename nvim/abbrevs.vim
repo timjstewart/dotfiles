@@ -4,8 +4,11 @@
 " | (_| | |_) | |_) | | |  __/\ V /\__ \
 "  \__,_|_.__/|_.__/|_|  \___| \_/ |___/
 
-" Common misspelling.
+" Common misspellings {{{
+
 iabbrev teh the
 iabbrev funciton function
 iabbrev fucniton function
+
+" }}}
 

@@ -11,15 +11,6 @@ filetype indent plugin on
 " So that my UltiSnips snippets can be found.
 set runtimepath+=~/.vim/my-snippets/
 
-"===============================================================================
-" Configure Settings
-"===============================================================================
-
-" set foldmethod=indent
-" set foldlevel=0
-" set foldlevelstart=0
-" set foldnestmax=2
-
 " Always show tabs
 set showtabline=2
 

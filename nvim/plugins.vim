@@ -31,11 +31,13 @@ Plug 'axvr/zepl.vim'
 
 " }}}
 " Snippets {{{
+
 " A powerful snippet insertion plugin.
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'honza/vim-snippets'
 " }}}
 " FZF {{{
+
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 " }}}
@@ -86,7 +88,6 @@ Plug 'Konfekt/FastFold'
 Plug 'kalekundert/vim-coiled-snake'
 
 " }}}
-
 " }}}
 " Text {{{
 
@@ -111,6 +112,7 @@ Plug 'mileszs/ack.vim'
 
 " }}}
 " Information {{{
+
 " JSON {{{
 
 " View JSON files in VIM with pinache.
@@ -136,6 +138,7 @@ Plug 'jceb/vim-orgmode'
 " }}}
 " }}}
 " Testing {{{
+
 " Run tests from VIM.
 Plug 'janko-m/vim-test'
 " }}}
@@ -194,7 +197,6 @@ Plug 'nightsense/cosmic_latte'
 Plug 'rafi/awesome-vim-colorschemes'
 
 " }}}
-
 " }}}
 
 call plug#end()
