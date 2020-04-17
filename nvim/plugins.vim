@@ -8,8 +8,10 @@
 " Initialize vim-plug
 call plug#begin('~/.vim/plugged')
 
-" Send code to another tmux pane (e.g. REPL)
-Plug 'jpalardy/vim-slime'
+" Project {{{
+
+" CtrlP interface for finding buffers, recent files, etc.
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Navigate to test files.
 Plug 'tpope/vim-projectionist'
@@ -18,38 +20,47 @@ Plug 'tpope/vim-dispatch'
 " When vim starts, show recent files, bookmarks, etc.
 Plug 'mhinz/vim-startify'
 
-" UNIX commands
-Plug 'tpope/vim-eunuch'
+" }}}
+" REPL {{{
 
+" Send code to another tmux pane (e.g. REPL)
+Plug 'jpalardy/vim-slime'
+
+" Figure this one out.
+Plug 'axvr/zepl.vim'
+
+" }}}
+" Snippets {{{
 " A powerful snippet insertion plugin.
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'honza/vim-snippets'
-
-" fzf integration
+" }}}
+" FZF {{{
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+" }}}
+" File System {{{
 
 " A directory/file viewer
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-" CtrlP interface for finding buffers, recent files, etc.
-Plug 'ctrlpvim/ctrlp.vim'
+" UNIX commands
+Plug 'tpope/vim-eunuch'
 
-" Fancier status line
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" }}}
+" Source Code {{{
+
+" Code completion
+Plug 'ycm-core/YouCompleteMe'
 
 " Asynchronous Linter Engine
 Plug 'dense-analysis/ale'
-
+"
 " Exchange things like parameters
 Plug 'tommcdo/vim-exchange'
 
 " Find type errors in Python code.
 Plug 'integralist/vim-mypy'
-
-" Create Wiki Pages in vim
-Plug 'vimwiki/vimwiki'
 
 " Key mappings for navigating
 Plug 'tpope/vim-unimpaired'
@@ -57,86 +68,134 @@ Plug 'tpope/vim-unimpaired'
 " gc to comment out selection
 Plug 'tpope/vim-commentary'
 
-" Clean up trailing whitespace whenever you save a file.
-Plug 'vim-scripts/DeleteTrailingWhitespace'
-
 " Manages your tags file for you.
 Plug 'ludovicchabant/vim-gutentags'
-
-" :Rg to search for text
-Plug 'jremmen/vim-ripgrep'
-Plug 'mileszs/ack.vim'
-
+"
 " Improved source code indentation for Python
 Plug 'Vimjas/vim-python-pep8-indent'
 
-" Easily surround text objects with characters.
-Plug 'tpope/vim-surround'
+" Still slow?
+Plug 'vim-scripts/taglist.vim'
+" Python {{{
 
-" View JSON files in VIM with pinache.
-Plug 'elzr/vim-json'
-
-" Run tests from VIM.
-Plug 'janko-m/vim-test'
-
-" Git integration
-Plug 'tpope/vim-fugitive'
-
-" Sort of like iedit
-Plug 'terryma/vim-multiple-cursors'
-
-" Still needed for terminal?
-Plug 'rbgrouleff/bclose.vim'
-
-" Code completion
-Plug 'ycm-core/YouCompleteMe'
-
-" For editing org files.
-Plug 'jceb/vim-orgmode'
-
-Plug 'rafi/awesome-vim-colorschemes'
-
-Plug 'tpope/vim-rhubarb'
-" Gitlab Support
-Plug 'shumphrey/fugitive-gitlab.vim'
-
-" Send HTTP requests
-Plug 'aquach/vim-http-client'
-
-" Minimalist Editing
-Plug 'junegunn/goyo.vim'
-
-Plug 'skywind3000/asyncrun.vim'
+" Refactoring
+Plug 'python-rope/ropevim'
 
 " Folding of Python Code
 Plug 'Konfekt/FastFold'
 Plug 'kalekundert/vim-coiled-snake'
 
-" Pretty icons
-Plug 'ryanoasis/vim-devicons'
+" }}}
 
-" Figure this one out.
-Plug 'axvr/zepl.vim'
+" }}}
+" Text {{{
 
-" Sandy Colorscheme
-Plug 'arzg/vim-corvine'
-Plug 'nightsense/cosmic_latte'
+" Clean up trailing whitespace whenever you save a file.
+Plug 'vim-scripts/DeleteTrailingWhitespace'
 
-" Taskwarrior integration
-Plug 'blindFS/vim-taskwarrior'
+" Easily surround text objects with characters.
+Plug 'tpope/vim-surround'
 
-" Accessing Databases
-Plug 'tpope/vim-dadbod'
-Plug 'kristijanhusak/vim-dadbod-ui'
-
-" Still slow?
-Plug 'vim-scripts/taglist.vim'
+" Sort of like iedit
+Plug 'terryma/vim-multiple-cursors'
 
 " File skeletons
 Plug 'pgilad/vim-skeletons'
 
-" Python Refactoring
-Plug 'python-rope/ropevim'
+" }}}
+" Search {{{
+
+" :Rg to search for text
+Plug 'jremmen/vim-ripgrep'
+Plug 'mileszs/ack.vim'
+
+" }}}
+" Information {{{
+" JSON {{{
+
+" View JSON files in VIM with pinache.
+Plug 'elzr/vim-json'
+" }}}
+" Databases {{{
+
+" Accessing Databases via vim command line
+Plug 'tpope/vim-dadbod'
+
+" User interface built on top of dadbod
+Plug 'kristijanhusak/vim-dadbod-ui'
+
+" }}}
+" Miscellaneous {{{
+
+" Create Wiki Pages in vim
+Plug 'vimwiki/vimwiki'
+
+" For editing org files.
+Plug 'jceb/vim-orgmode'
+
+" }}}
+" }}}
+" Testing {{{
+" Run tests from VIM.
+Plug 'janko-m/vim-test'
+" }}}
+" Version Control {{{
+
+" Git integration
+Plug 'tpope/vim-fugitive'
+
+Plug 'tpope/vim-rhubarb'
+
+" Gitlab Support
+Plug 'shumphrey/fugitive-gitlab.vim'
+
+" }}}
+" Utilities {{{
+
+" Still needed for terminal?
+Plug 'rbgrouleff/bclose.vim'
+
+" Send HTTP requests
+Plug 'aquach/vim-http-client'
+
+Plug 'skywind3000/asyncrun.vim'
+
+" }}}
+" Organization/Productivity {{{
+
+" Taskwarrior integration
+Plug 'blindFS/vim-taskwarrior'
+
+" }}}
+" Appearance {{{
+
+" Status Line {{{
+
+" Fancier status line
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" }}}
+
+" Decoration {{{
+
+" Pretty icons
+Plug 'ryanoasis/vim-devicons'
+
+" Minimalist Editing
+Plug 'junegunn/goyo.vim'
+
+" }}}
+
+" Color Schemes {{{
+
+" Sandy Colorscheme
+Plug 'arzg/vim-corvine'
+Plug 'nightsense/cosmic_latte'
+Plug 'rafi/awesome-vim-colorschemes'
+
+" }}}
+
+" }}}
 
 call plug#end()
 
