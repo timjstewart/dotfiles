@@ -8,12 +8,10 @@
 " Initialize vim-plug
 call plug#begin('~/.vim/plugged')
 
+" Send code to another tmux pane (e.g. REPL)
 Plug 'jpalardy/vim-slime'
 
-" I don't really use these.
-" Plug 'mcchrish/nnn.vim'
-" Plug 'ptzz/lf.vim'
-
+" Navigate to test files.
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-dispatch'
 
@@ -27,6 +25,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'honza/vim-snippets'
 
+" fzf integration
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
@@ -40,24 +39,11 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-
-" Plug 'roxma/nvim-yarp'
-" Plug 'ncm2/ncm2'
-" Plug 'davidhalter/jedi-vim'
-" " Fast python completion (use ncm2 if you want type info or snippet support)
-" Plug 'HansPinckaers/ncm2-jedi'
-
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-" Asynchronous Linter
+" Asynchronous Linter Engine
 Plug 'dense-analysis/ale'
 
 " Exchange things like parameters
 Plug 'tommcdo/vim-exchange'
-
-" I don't have a use for this in Python
-" Tabulate text
-" Plug 'godlygeek/tabular'
 
 " Find type errors in Python code.
 Plug 'integralist/vim-mypy'
@@ -99,15 +85,13 @@ Plug 'tpope/vim-fugitive'
 " Sort of like iedit
 Plug 'terryma/vim-multiple-cursors'
 
-" Run Ranger in VIM
-" Plug 'francoiscabrol/ranger.vim'
+" Still needed for terminal?
 Plug 'rbgrouleff/bclose.vim'
 
-" Completion for Python using jedi.
-" Plug 'zchee/deoplete-jedi'
-"
+" Code completion
 Plug 'ycm-core/YouCompleteMe'
 
+" For editing org files.
 Plug 'jceb/vim-orgmode'
 
 Plug 'rafi/awesome-vim-colorschemes'
@@ -116,62 +100,42 @@ Plug 'tpope/vim-rhubarb'
 " Gitlab Support
 Plug 'shumphrey/fugitive-gitlab.vim'
 
-" Show indentation markers
-Plug 'yggdroot/indentline'
-
+" Send HTTP requests
 Plug 'aquach/vim-http-client'
 
+" Minimalist Editing
 Plug 'junegunn/goyo.vim'
 
 Plug 'skywind3000/asyncrun.vim'
 
-"Plug 'camspiers/lens.vim'
-"Plug 'camspiers/animate.vim'
-
-" Needs colorscheme work (line numbers look funny)
-" Plug 'blueyed/vim-diminactive'
-
+" Folding of Python Code
 Plug 'Konfekt/FastFold'
 Plug 'kalekundert/vim-coiled-snake'
 
-" I just don't use this
-" Plug 'rhysd/git-messenger.vim'
-
-" I just don't use this
-" Plug 'sjl/gundo.vim'
-
-Plug 'pechorin/any-jump.vim'
-
-" Interferes with <leader><leader>
-" Plug 'easymotion/vim-easymotion'
-
+" Pretty icons
 Plug 'ryanoasis/vim-devicons'
 
+" Figure this one out.
 Plug 'axvr/zepl.vim'
 
 " Sandy Colorscheme
 Plug 'arzg/vim-corvine'
 Plug 'nightsense/cosmic_latte'
 
+" Taskwarrior integration
 Plug 'blindFS/vim-taskwarrior'
 
+" Accessing Databases
 Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
 
+" Still slow?
 Plug 'vim-scripts/taglist.vim'
 
+" File skeletons
 Plug 'pgilad/vim-skeletons'
 
-" pyenv and ipython integration issues.
-" Plug 'urbainvaes/vim-ripple'
-" " Optional dependency for vim-ripple
-" Plug 'machakann/vim-highlightedyank'
-
-" Buggy
-" Fugitive Extensions
-" Plug 'sodapopcan/vim-twiggy'
-
-
+" Python Refactoring
 Plug 'python-rope/ropevim'
 
 call plug#end()

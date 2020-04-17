@@ -26,36 +26,44 @@ function! CheckList_list_templates(arg, x, y)
                 \ {idx, val -> stridx(val, a:arg) != -1})
 endfunction
 
-function CheckList_copy_file(source, destination)
+function CheckList_instantiate_template(source, destination, promptOverwrite)
+    if a:promptOverwrite && filereadable(a:destination)
+        let choice = confirm(printf("File already exists: %s.  Overwrite?", a:destination), "&Yes\n&No", 2)
+        if choice == 2
+            return 0
+        endif
+    endif
     let contents = readfile(expand(a:source))
     call writefile(contents, expand(a:destination))
+    return 1
 endfunction
 
 function CheckList_get_template_path(name)
-    return printf("%s/templates/%s.chk", g:CheckList_directory, a:name)
+    return expand(printf("%s/templates/%s.chk", g:CheckList_directory, a:name))
 endfunction
 
 function CheckList_get_ongoing_path(name)
-    return printf("%s/ongoing/%s.chk", g:CheckList_directory, a:name)
+    return expand(printf("%s/ongoing/%s.chk", g:CheckList_directory, a:name))
 endfunction
 
 function CheckList_get_archived_path(name)
-    return printf("%s/archived/%s.chk", g:CheckList_directory, a:name)
+    return expand(printf("%s/archived/%s.chk", g:CheckList_directory, a:name))
 endfunction
 
 function CheckList_get_completed_path(name)
-    return printf("%s/completed/%s.chk", g:CheckList_directory, a:name)
+    return expand(printf("%s/completed/%s.chk", g:CheckList_directory, a:name))
 endfunction
 
 function! CheckListStart()
-    let checklist = input({ "prompt": "Select Template: ", "completion": "customlist,CheckList_list_templates" })
-    if strlen(checklist)
+    let checklist = input({"prompt": "Select Template: ", "completion": "customlist,CheckList_list_templates"})
+    if !empty(checklist)
         let name = input("Checklist Name: ")
-        if strlen(name)
+        if !empty(name)
             let source = CheckList_get_template_path(checklist)
             let destination = CheckList_get_ongoing_path(name)
-            call CheckList_copy_file(source, destination)
-            execute printf("vsplit %s", destination)
+            if CheckList_instantiate_template(source, destination, 1)
+                execute printf("vsplit %s", destination)
+            endif
         else
             echo "\nNo name provided."
         endif
