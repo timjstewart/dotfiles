@@ -35,11 +35,13 @@ Plug 'axvr/zepl.vim'
 " A powerful snippet insertion plugin.
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'honza/vim-snippets'
+
 " }}}
 " FZF {{{
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+
 " }}}
 " File System {{{
 
@@ -61,9 +63,6 @@ Plug 'dense-analysis/ale'
 " Exchange things like parameters
 Plug 'tommcdo/vim-exchange'
 
-" Find type errors in Python code.
-Plug 'integralist/vim-mypy'
-
 " Key mappings for navigating
 Plug 'tpope/vim-unimpaired'
 
@@ -73,11 +72,9 @@ Plug 'tpope/vim-commentary'
 " Manages your tags file for you.
 Plug 'ludovicchabant/vim-gutentags'
 "
-" Improved source code indentation for Python
-Plug 'Vimjas/vim-python-pep8-indent'
-
 " Still slow?
 Plug 'vim-scripts/taglist.vim'
+
 " Python {{{
 
 " Refactoring
@@ -86,6 +83,12 @@ Plug 'python-rope/ropevim'
 " Folding of Python Code
 Plug 'Konfekt/FastFold'
 Plug 'kalekundert/vim-coiled-snake'
+
+" Improved source code indentation for Python
+Plug 'Vimjas/vim-python-pep8-indent'
+
+" Find type errors in Python code.
+Plug 'integralist/vim-mypy'
 
 " }}}
 " }}}
@@ -191,9 +194,6 @@ Plug 'junegunn/goyo.vim'
 
 " Color Schemes {{{
 
-" Sandy Colorscheme
-Plug 'arzg/vim-corvine'
-Plug 'nightsense/cosmic_latte'
 Plug 'rafi/awesome-vim-colorschemes'
 
 " }}}
