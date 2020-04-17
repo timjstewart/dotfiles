@@ -21,53 +21,69 @@ let s:CheckList_completed_directory = printf("%s/completed", g:CheckList_directo
 let s:CheckList_archived_directory = printf("%s/archived", g:CheckList_directory)
 
 function! CheckList_list_templates(arg, x, y)
-    return filter(map(glob(printf("%s/*.chk", s:CheckList_template_directory), 0, 1, 1),
-                \ {idx, elem -> fnamemodify(elem, ":t:r")}),
+    return filter(map(glob(printf("%s/*", s:CheckList_template_directory), 0, 1, 1),
+                \ {idx, elem -> fnamemodify(elem, ":t")}),
                 \ {idx, val -> stridx(val, a:arg) != -1})
 endfunction
 
 function CheckList_instantiate_template(source, destination, promptOverwrite)
     if a:promptOverwrite && filereadable(a:destination)
-        let choice = confirm(printf("File already exists: %s.  Overwrite?", a:destination), "&Yes\n&No", 2)
+        const choice = confirm(printf("File already exists: %s.  Overwrite?", a:destination), "&Yes\n&No", 2)
         if choice == 2
             return 0
         endif
     endif
-    let contents = readfile(expand(a:source))
-    call writefile(contents, expand(a:destination))
+    execute printf("vsplit %s | 1,$d", a:destination)
+    const contents = join(readfile(expand(a:source)), "\n")
+    call UltiSnips#Anon(contents)
     return 1
 endfunction
 
 function CheckList_get_template_path(name)
-    return expand(printf("%s/templates/%s.chk", g:CheckList_directory, a:name))
+    return expand(printf("%s/templates/%s", g:CheckList_directory, a:name))
 endfunction
 
 function CheckList_get_ongoing_path(name)
-    return expand(printf("%s/ongoing/%s.chk", g:CheckList_directory, a:name))
+    return expand(printf("%s/ongoing/%s", g:CheckList_directory, a:name))
 endfunction
 
 function CheckList_get_archived_path(name)
-    return expand(printf("%s/archived/%s.chk", g:CheckList_directory, a:name))
+    return expand(printf("%s/archived/%s", g:CheckList_directory, a:name))
 endfunction
 
 function CheckList_get_completed_path(name)
-    return expand(printf("%s/completed/%s.chk", g:CheckList_directory, a:name))
+    return expand(printf("%s/completed/%s", g:CheckList_directory, a:name))
 endfunction
 
 function! CheckListStart()
-    let checklist = input({"prompt": "Select Template: ", "completion": "customlist,CheckList_list_templates"})
+    const checklist = input({"prompt": "Select Template: ", "completion": "customlist,CheckList_list_templates"})
     if !empty(checklist)
+        const source = CheckList_get_template_path(checklist)
+        if !filereadable(source)
+            echom printf("Could not find template: %s", source)
+            return
+        endif
         let name = input("Checklist Name: ")
         if !empty(name)
-            let source = CheckList_get_template_path(checklist)
-            let destination = CheckList_get_ongoing_path(name)
-            if CheckList_instantiate_template(source, destination, 1)
-                execute printf("vsplit %s", destination)
-            endif
+            const fileName = printf("%s.%s", name, fnamemodify(checklist, ":e"))
+            const destination = CheckList_get_ongoing_path(fileName)
+            call CheckList_instantiate_template(source, destination, 1)
         else
             echo "\nNo name provided."
         endif
     else
         echo "\nNo template selected."
     endif
+endfunction
+
+function! CheckListComplete()
+    const path = expand("%")
+    call rename(path, CheckList_get_completed_path(fnamemodify(path, ":t")))
+    bdelete
+endfunction
+
+function! CheckListArchive()
+    const path = expand("%")
+    call rename(path, CheckList_get_archived_path(fnamemodify(path, ":t")))
+    bdelete
 endfunction
