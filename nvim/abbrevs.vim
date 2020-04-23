@@ -11,4 +11,9 @@ iabbrev funciton function
 iabbrev fucniton function
 
 " }}}
+" About me {{{
 
+iabbrev tp timothy.stewart@pearson.com
+iabbrev tg tim.j.stewart@gmail.com
+
+" }}}

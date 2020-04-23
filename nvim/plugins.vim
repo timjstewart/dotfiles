@@ -166,6 +166,8 @@ Plug 'aquach/vim-http-client'
 
 Plug 'skywind3000/asyncrun.vim'
 
+Plug 'mbbill/undotree'
+
 " }}}
 " Organization/Productivity {{{
 
@@ -200,4 +202,3 @@ Plug 'rafi/awesome-vim-colorschemes'
 " }}}
 
 call plug#end()
-

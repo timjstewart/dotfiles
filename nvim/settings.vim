@@ -8,8 +8,8 @@ syntax on
 filetype off
 filetype indent plugin on
 
-" So that my UltiSnips snippets can be found.
-set runtimepath+=~/.vim/my-snippets/
+" " So that my UltiSnips snippets can be found.
+" set runtimepath+=~/.vim/my-snippets/
 
 " Always show tabs
 set showtabline=2
@@ -60,6 +60,9 @@ let maplocalleader="\\"
 " Ignore case
 set ignorecase
 
+" Override ignorecase if the search pattern includes upper case characters.
+set smartcase
+
 " Don't wrap text.
 set nowrap
 
@@ -95,9 +98,6 @@ set secure
 
 " Briefly show matching brackets.
 set showmatch
-
-" Override ignorecase if the search pattern includes upper case characters.
-set smartcase
 
 " Smart tabs sound better than dumb tabs
 set smarttab
