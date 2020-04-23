@@ -200,5 +200,10 @@ Plug 'rafi/awesome-vim-colorschemes'
 
 " }}}
 " }}}
+" TMUX {{{
+"
+Plug 'christoomey/vim-tmux-navigator'
+
+" }}}
 
 call plug#end()
