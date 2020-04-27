@@ -81,3 +81,15 @@ nnoremap <leader>vs :source $MYVIMRC<cr>
 
 " Turn spelling on/off.
 nnoremap <leader>st :set spell!<cr>
+
+" Go to next and previous tabs with the TAB key in normal mode.  More powerful
+" than Ctrl-^ and faster than Ctrl-O/Ctrl-I.
+nnoremap <TAB> :bnext<CR>
+nnoremap <S-TAB> :bprevious<CR>
+
+" Resize current window. Using <ALT+h> (or j, k, or h) don't work on the Mac.
+" See: https://stackoverflow.com/a/5382863/26002
+nnoremap ˙ :vertical resize -3<CR>      " <ALT+h> decrease width
+nnoremap ∆ :resize -3<CR>               " <ALT+j> decrease height
+nnoremap ˚ :resize +3<CR>               " <ALT+k> increase height
+nnoremap ¬ :vertical resize +3<CR>      " <ALT+l> increase width
