@@ -13,3 +13,4 @@ runtime mappings.vim
 runtime autocommands.vim
 runtime abbrevs.vim
 runtime functions.vim
+runtime commands.vim

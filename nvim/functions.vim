@@ -87,3 +87,33 @@ function! CheckListArchive()
     call rename(path, CheckList_get_archived_path(fnamemodify(path, ":t")))
     bdelete
 endfunction
+
+
+function! PipPackageDict()
+    let result = {}
+    let cmdOutput = systemlist(printf("pip freeze"))
+    for line in cmdOutput
+        let tokens = split(line, '==')
+        if len(tokens) == 2
+            let key = l:tokens[0]
+            let value = l:tokens[1]
+            let result[key] = value
+        endif
+    endfor
+    return result
+endfunction
+
+function! PipListPackages(prefix, x, y)
+    return PipFilterPackages(PipPackageDict(), a:prefix)
+endfunction
+
+function! PipFilterPackages(packageDictionary, regex)
+    return filter(keys(a:packageDictionary), {idx, x -> x =~ a:regex})
+endfunction
+
+function! PipPackageVersion(packageName)
+    let packageDictionary = PipPackageDict()
+    for package in PipFilterPackages(packageDictionary, a:packageName)
+        echo printf("%s==%s", package, packageDictionary[package])
+    endfor
+endfunction
