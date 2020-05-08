@@ -8,9 +8,6 @@ syntax on
 filetype off
 filetype indent plugin on
 
-" " So that my UltiSnips snippets can be found.
-" set runtimepath+=~/.vim/my-snippets/
-
 " Always show tabs
 set showtabline=2
 
@@ -124,7 +121,6 @@ set inccommand=split
 " Ignore files I rarely care about.
 set wildignore+=*/.git/*,*/tmp/*,*.swp,*/venv/*,.DS_Store,*.pyc,tags
 
-"
 "===============================================================================
 " Project Setup
 "===============================================================================

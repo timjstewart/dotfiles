@@ -55,7 +55,7 @@ Plug 'tpope/vim-eunuch'
 " Source Code {{{
 
 " Code completion
-Plug 'ycm-core/YouCompleteMe'
+Plug 'Shougo/deoplete.nvim'
 
 " Asynchronous Linter Engine
 Plug 'dense-analysis/ale'
