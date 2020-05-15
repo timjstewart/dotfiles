@@ -3,6 +3,8 @@
 " | |_| | | | '_ \ / __| __| |/ _ \| '_ \/ __|
 " |  _| |_| | | | | (__| |_| | (_) | | | \__ \
 " |_|  \__,_|_| |_|\___|\__|_|\___/|_| |_|___/
+"
+" --------------------------------------------
 
 function! ReplaceMagicNumberWithConstant()
     let l:magicNumber = expand("<cword>")
@@ -117,3 +119,27 @@ function! PipPackageVersion(packageName)
         echo printf("%s==%s", package, packageDictionary[package])
     endfor
 endfunction
+
+
+" function ProjectRoot()
+"     let cwd = getcwd()
+"     let projectMarkers = globpath(cwd, ".git")
+"     if projectMarkers
+"         return cwd
+"     else
+
+"     endif
+" endfunction
+
+function! ResolveMergeConclicts()
+    " Run Gvdiffsplit on the current file
+    :normal dv
+    " Resize the three panes so that they have as much room as possible.
+    :resize
+    " Search for the first conflict marker.
+    :execute "normal /<<<<</\<CR>"
+    " Move the first conflict to the top of the window
+    :normal zt
+endfunction
+
+

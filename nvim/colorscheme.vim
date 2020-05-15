@@ -6,9 +6,11 @@
 
 
 " Colorschemes{{{
-colorscheme dracula
+colorscheme gruvbox
 " Colorschemes I have liked in the past. {{{
 "
+"colorscheme nord
+"colorscheme dracula
 "colorscheme jellybeans
 "colorscheme cosmic_latte
 "colorscheme elflord
@@ -20,9 +22,6 @@ colorscheme dracula
 "colorscheme ayu
 
 " }}}
-" }}}
-" Background {{{
-set background=dark
 " }}}
 " Hightlights {{{
 highlight Normal ctermbg=none

@@ -106,6 +106,9 @@ Plug 'terryma/vim-multiple-cursors'
 " File skeletons
 Plug 'pgilad/vim-skeletons'
 
+
+Plug 'vim-scripts/AutoComplPop'
+
 " }}}
 " Search {{{
 
@@ -197,6 +200,7 @@ Plug 'junegunn/goyo.vim'
 " Color Schemes {{{
 
 Plug 'rafi/awesome-vim-colorschemes'
+Plug 'arcticicestudio/nord-vim'
 
 " }}}
 " }}}

@@ -11,21 +11,18 @@ augroup source_init_vim
     autocmd BufWritePost ~/.dotfiles/nvim/*.vim silent :source %
 augroup END
 
-augroup cursorline_ag
+augroup DiffMappings
     autocmd!
-    autocmd InsertLeave,WinEnter * set cursorline
-    autocmd InsertEnter,WinLeave * set nocursorline
+    autocmd OptionSet diff nnoremap <buffer> <leader>f :diffget //2<CR>
+    autocmd OptionSet diff nnoremap <buffer> <leader>j :diffget //3<CR>
 augroup END
 
-
-" augroup startup
+" augroup cursorline_ag
 "     autocmd!
-"     " Start NERDTree
-"     autocmd VimEnter * NERDTree
-"     " Jump to the main window.
-"     autocmd VimEnter * wincmd p
+"     autocmd InsertLeave,WinEnter * set cursorline
+"     autocmd InsertEnter,WinLeave * set nocursorline
 " augroup END
-"
+
 
 " TODO: Find better color
 " augroup highlight_current_identifier

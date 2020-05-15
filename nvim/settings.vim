@@ -102,7 +102,7 @@ set smarttab
 " Buffer switching behavior
 " useopen - Switch to first open window that contains the specified buffer.
 " usetab - swtich to other tab containing the buffer
-set switchbuf=useopen,usetab
+set switchbuf=useopen,usetab,split
 
 " Number of spaces that a <Tab> in the file counts for.
 set tabstop=4
@@ -121,6 +121,8 @@ set inccommand=split
 " Ignore files I rarely care about.
 set wildignore+=*/.git/*,*/tmp/*,*.swp,*/venv/*,.DS_Store,*.pyc,tags
 
+set background=dark
+
 "===============================================================================
 " Project Setup
 "===============================================================================
@@ -129,9 +131,10 @@ set wildignore+=*/.git/*,*/tmp/*,*.swp,*/venv/*,.DS_Store,*.pyc,tags
 " that the directory should be recursively searched.
 set path+=~/src/pearson-turing/math-service/**
 
-set complete-=i   " disable scanning included files from <c-n> and <c-p>.
+set completeopt=menuone,preview
 
 " 999 was too visually jarring for me
 set scrolloff=3
 
 set suffixesadd=.py
+
