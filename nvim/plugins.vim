@@ -75,6 +75,9 @@ Plug 'ludovicchabant/vim-gutentags'
 " Still slow?
 Plug 'vim-scripts/taglist.vim'
 
+" Search and Replace
+Plug 'dyng/ctrlsf.vim'
+
 " Python {{{
 
 " Refactoring
@@ -107,7 +110,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'pgilad/vim-skeletons'
 
 
-Plug 'vim-scripts/AutoComplPop'
+" Plug 'vim-scripts/AutoComplPop'
 
 " }}}
 " Search {{{
@@ -170,6 +173,8 @@ Plug 'aquach/vim-http-client'
 Plug 'skywind3000/asyncrun.vim'
 
 Plug 'mbbill/undotree'
+
+Plug 'voldikss/vim-floaterm'
 
 " }}}
 " Organization/Productivity {{{

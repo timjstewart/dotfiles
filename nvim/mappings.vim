@@ -50,10 +50,9 @@ nnoremap <C-l> <C-w>l
 
 " FZF
 nnoremap <leader>s :Ag<CR>
+nnoremap <leader>bc :BCommits<CR>
 
 tnoremap <Esc> <C-\><C-n>
-
-nnoremap <f1> :YcmCompleter GetDoc<CR><Esc>
 
 " I accidentally hit F1 a lot and I know about :he.
 inoremap <f1> <nop>

@@ -169,7 +169,7 @@ let g:indentLine_char = '┊'
 
 "let g:gutentags_exclude_filetypes = [ 'markdown' ]
 " When ctags processes a large markdown file, it hangs
-let g:gutentags_ctags_exclude = [ '*.md', '*.json' ]
+let g:gutentags_ctags_exclude = [ '*.md', '*.json', '*.js', '*.css', '*.html', '*Lexer.py', '*Visitor.py', '*Parser.py', '*.svg' ]
 
 
 " Testing
@@ -218,11 +218,9 @@ let skeletons#skeletonsDir = "~/.config/nvim/skeletons"
 
 let g:db_ui_auto_execute_table_helpers = 1
 
+" Termfloat
 
-" " Ripple
-
-" let g:ripple_enable_mappings = 1
-" let g:default_repls = {
-"             \ "python": ["~/.pyenv/shims/ipython", "\<c-u>\<esc>[200~", "\<esc>[201~", 1],
-"             \ }
+let g:floaterm_position = 'top'
+let g:floaterm_rootmarkers = [ '.git' ]
+let g:floaterm_autoclose = 1
 

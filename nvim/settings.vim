@@ -129,7 +129,7 @@ set background=dark
 
 " Turing (so that gf works on imports).  The ** at the end of the path means
 " that the directory should be recursively searched.
-set path+=~/src/pearson-turing/math-service/**
+set path+=~/src/math-engine/primary/**
 
 set completeopt=menuone,preview
 
@@ -138,3 +138,7 @@ set scrolloff=3
 
 set suffixesadd=.py
 
+" I was getting errors using Ctrl-P some times.
+set maxmempattern=2000
+
+set colorcolumn=100
