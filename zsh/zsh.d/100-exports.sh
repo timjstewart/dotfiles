@@ -19,3 +19,6 @@ export FZF_DEFAULT_OPTS="
 --bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
 --bind 'ctrl-v:execute(code {+})'
 "
+
+export ANDROID_HOME=/Users/$USER/Library/Android/sdk
+

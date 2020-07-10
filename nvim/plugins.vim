@@ -10,7 +10,7 @@ call plug#begin('~/.vim/plugged')
 
 " Project {{{
 
-" CtrlP interface for finding buffers, recent files, etc.
+" " CtrlP interface for finding buffers, recent files, etc.
 Plug 'ctrlpvim/ctrlp.vim'
 
 " Navigate to test files.
@@ -90,9 +90,6 @@ Plug 'kalekundert/vim-coiled-snake'
 " Improved source code indentation for Python
 Plug 'Vimjas/vim-python-pep8-indent'
 
-" Find type errors in Python code.
-Plug 'integralist/vim-mypy'
-
 " }}}
 " }}}
 " Text {{{
@@ -108,9 +105,6 @@ Plug 'terryma/vim-multiple-cursors'
 
 " File skeletons
 Plug 'pgilad/vim-skeletons'
-
-
-" Plug 'vim-scripts/AutoComplPop'
 
 " }}}
 " Search {{{
@@ -197,15 +191,11 @@ Plug 'vim-airline/vim-airline-themes'
 " Pretty icons
 Plug 'ryanoasis/vim-devicons'
 
-" Minimalist Editing
-Plug 'junegunn/goyo.vim'
-
 " }}}
 
 " Color Schemes {{{
 
 Plug 'rafi/awesome-vim-colorschemes'
-Plug 'arcticicestudio/nord-vim'
 
 " }}}
 " }}}

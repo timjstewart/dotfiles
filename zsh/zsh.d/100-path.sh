@@ -8,6 +8,8 @@ directories=(
     $HOME/bin
     $HOME/.local/bin
     $HOME/scripts
+    $ANDROID_HOME/tools
+    $ANDROID_HOME/platform-tools
 )
 
 for dir in ${directories[@]}
@@ -17,3 +19,7 @@ done
 
 
 export PATH
+
+
+
+

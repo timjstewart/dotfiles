@@ -143,3 +143,9 @@ function! ResolveMergeConclicts()
 endfunction
 
 
+function! PytestFunction()
+    let test_name = expand("<cword>")
+    let command = printf("python -m pytest tests/math_engine -k %s", l:test_name)
+    let output = system(l:command)
+    echom l:output
+endfunction

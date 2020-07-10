@@ -33,7 +33,7 @@ alias gu='git diff --name-only --diff-filter=U'
 alias gcd='git checkout develop'
 alias gc='git --no-pager diff --name-only --diff-filter=U --relative'
 alias gb='git --no-pager branch'
-alias gbr='git checkout $(git branch | fzf | tr -d "*")'
+alias gco='git checkout $(git branch | fzf | tr -d "*")'
 
 # }}}
 # Python {{{

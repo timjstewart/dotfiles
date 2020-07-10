@@ -30,3 +30,8 @@ augroup END
 "     autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 " augroup END
 
+augroup Terminal
+    autocmd!
+    autocmd TermOpen * tnoremap <buffer> <Esc> <c-\><c-n>
+    autocmd FileType fzf tunmap <buffer> <Esc>
+augroup END

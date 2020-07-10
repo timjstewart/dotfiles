@@ -6,7 +6,9 @@
 
 
 " Colorschemes{{{
+"
 colorscheme gruvbox
+
 " Colorschemes I have liked in the past. {{{
 "
 "colorscheme nord
@@ -24,9 +26,11 @@ colorscheme gruvbox
 " }}}
 " }}}
 " Hightlights {{{
+"
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 highlight Normal guibg=none
 highlight NonText guibg=none
+
 " }}}
 

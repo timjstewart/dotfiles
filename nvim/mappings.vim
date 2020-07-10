@@ -5,7 +5,7 @@
 " |_| |_| |_|\__,_| .__/| .__/|_|_| |_|\__, |___/
 "                 |_|   |_|            |___/
 
-" Disable Arrow keys
+" Disable Arrow keys (so that I learn to avoid using them)
 map <Up> <nop>
 map <Down> <nop>
 map <Left> <nop>
@@ -14,31 +14,30 @@ map <Right> <nop>
 " Map fd to allow quick exit from insert mode.
 inoremap fd <ESC>
 
-" CtrlP Mappings
-map <leader>fr :CtrlPMixed<CR>
-map <leader>bb :CtrlPBuffer<CR>
-map <leader>gi :CtrlPBufTag<CR>
-
-" Project Files
-" map <leader>pf :CtrlP<CR>
+" FZF Mappings
+map <leader>bb :Buffers<cr>
+nnoremap <leader>s :Ag<cr>
+nnoremap <leader>bc :BCommits<cr>
+nnoremap <f5> :Rg <C-r><C-w><cr>
+nnoremap <S-f5> :Rg "<C-r><C-a>"<cr>
 
 " Edit alternate file
 nmap <leader><tab> <C-^>
 
 " Remove search highlight
-nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <leader><space> :nohlsearch<cr>
 
 " Git
-nnoremap <leader>ga :Git add %:p<CR><CR>
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gp :Gpush<CR>
-nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>ga :Git add %:p<cr><cr>
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gp :Gpush<cr>
+nnoremap <leader>gb :Gblame<cr>
 
 " Linting Error Movement
-nnoremap ]r :ALENextWrap<CR>
-nnoremap [r :ALEPreviousWrap<CR>
+nnoremap ]r :ALENextWrap<cr>
+nnoremap [r :ALEPreviousWrap<cr>
 
-" keep visual selection when indenting/outdenting
+" keep visual selection when indenting/outdenting.
 vmap < <gv
 vmap > >gv
 
@@ -48,31 +47,22 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" FZF
-nnoremap <leader>s :Ag<CR>
-nnoremap <leader>bc :BCommits<CR>
-
-tnoremap <Esc> <C-\><C-n>
-
 " I accidentally hit F1 a lot and I know about :he.
 inoremap <f1> <nop>
 
 " Navigate Quickfix List with F2 and Shift-F2.
-nnoremap <f2> :cnext<CR>
-nnoremap <S-f2> :cprev<CR>
+nnoremap <f2> :cnext<cr>
+nnoremap <S-f2> :cprev<cr>
 
 " Navigate Locations with F3 and Shift-F3.
-nnoremap <f3> :lnext<CR>
-nnoremap <S-f3> :lprev<CR>
+nnoremap <f3> :lnext<cr>
+nnoremap <S-f3> :lprev<cr>
 
-nnoremap <leader>t :20sp +terminal <CR> i
-
-nnoremap <f5> :Rg <C-r><C-w><CR>
-nnoremap <S-f5> :Rg "<C-r><C-a>"<CR>
+nnoremap <leader>t :20sp +terminal <cr> i
 
 " NERDTree mappings
-nnoremap <leader>nt :NERDTreeToggle<CR>
-nnoremap <leader>nf :NERDTreeFind<CR>
+nnoremap <leader>nt :NERDTreeToggle<cr>
+nnoremap <leader>nf :NERDTreeFind<cr>
 
 " vim mappings
 nnoremap <leader>ve :vsplit $MYVIMRC<cr>
@@ -81,14 +71,15 @@ nnoremap <leader>vs :source $MYVIMRC<cr>
 " Turn spelling on/off.
 nnoremap <leader>st :set spell!<cr>
 
-" Go to next and previous tabs with the TAB key in normal mode.  More powerful
-" than Ctrl-^ and faster than Ctrl-O/Ctrl-I.
-nnoremap <TAB> :bnext<CR>
-nnoremap <S-TAB> :bprevious<CR>
-
 " Resize current window. Using <ALT+h> (or j, k, or h) don't work on the Mac.
 " See: https://stackoverflow.com/a/5382863/26002
-nnoremap ˙ :vertical resize -3<CR>      " <ALT+h> decrease width
-nnoremap ∆ :resize -3<CR>               " <ALT+j> decrease height
-nnoremap ˚ :resize +3<CR>               " <ALT+k> increase height
-nnoremap ¬ :vertical resize +3<CR>      " <ALT+l> increase width
+nnoremap ˙ :vertical resize -3<cr>      " <ALT+h> decrease width
+nnoremap ∆ :resize -3<cr>               " <ALT+j> decrease height
+nnoremap ˚ :resize +3<cr>               " <ALT+k> increase height
+nnoremap ¬ :vertical resize +3<cr>      " <ALT+l> increase width
+
+" " Go to next and previous tabs with the TAB key in normal mode.  More powerful
+" " than Ctrl-^ and faster than Ctrl-O/Ctrl-I.
+" nnoremap <TAB> :bnext<cr>
+" nnoremap <S-TAB> :bprevious<cr>
+

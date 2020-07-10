@@ -141,4 +141,5 @@ set suffixesadd=.py
 " I was getting errors using Ctrl-P some times.
 set maxmempattern=2000
 
-set colorcolumn=100
+set colorcolumn=120
+

@@ -224,3 +224,10 @@ let g:floaterm_position = 'top'
 let g:floaterm_rootmarkers = [ '.git' ]
 let g:floaterm_autoclose = 1
 
+" CtrlSF
+
+let g:ctrlsf_auto_preview = 1
+let g:ctrlsf_auto_focus = {
+            \ "at" : "start"
+            \ }
+
