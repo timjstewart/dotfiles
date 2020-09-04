@@ -28,8 +28,7 @@ set undofile
 " Don't redraw screen during macro execution.  Use :redraw to force a redraw
 set lazyredraw
 
-" Complete only until point of ambiguity
-set wildmode=list:longest
+set wildmode=longest:full
 
 " UNICODE
 set encoding=UTF-8
@@ -75,8 +74,8 @@ set number relativenumber
 " Set how many spaces an indent should insert.
 set shiftwidth=4
 
-" Vim should change to the directory of files I edit.
-set autochdir
+" I'm learning the power of :find and :b and autochdir gets in the way.
+set noautochdir
 
 " When TAB is hit, enter spaces
 set expandtab
@@ -121,7 +120,6 @@ set inccommand=split
 " Ignore files I rarely care about.
 set wildignore+=*/.git/*,*/tmp/*,*.swp,*/venv/*,.DS_Store,*.pyc,tags
 
-set background=dark
 
 "===============================================================================
 " Project Setup
@@ -129,7 +127,7 @@ set background=dark
 
 " Turing (so that gf works on imports).  The ** at the end of the path means
 " that the directory should be recursively searched.
-set path+=~/src/math-engine/primary/**
+set path+=**
 
 set completeopt=menuone,preview
 
@@ -143,3 +141,4 @@ set maxmempattern=2000
 
 set colorcolumn=120
 
+set history=200

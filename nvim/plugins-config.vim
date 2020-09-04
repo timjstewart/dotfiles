@@ -24,7 +24,8 @@ let NERDTreeIgnore=[
             \ '.pyc$',
             \ '\.DS_Store$',
             \ '__pycache__$',
-            \ 'venv$'
+            \ 'venv$',
+            \ 'node_modules$'
             \ ]
 
 " ALE
@@ -147,20 +148,8 @@ let g:ctrlp_match_current_file = 1
 
 let g:ctrlp_extensions = ['tag', 'dir', 'mixed', 'bookmarkdir']
 let g:ctrlp_custom_ignore = '\v[\/]\htmlcov$'
+let g:ctrlp_working_path_mode = 'ra'
 
-
-" if executable('pyls')
-"     " pip install python-language-server
-"     au User lsp_setup call lsp#register_server({
-"         \ 'name': 'pyls',
-"         \ 'cmd': {server_info->['pyls']},
-"         \ 'whitelist': ['python'],
-"         \ })
-" endif
-"
-" let g:LanguageClient_serverCommands = {
-"     \ 'python': ['/Users/STEWTJ3/.pyenv/shims/pyls']
-"     \ }
 
 " indentLine
 let g:indentLine_char = '┊'

@@ -117,6 +117,11 @@ Plug 'mileszs/ack.vim'
 " Information {{{
 
 " JSON {{{
+"
+Plug 'mrk21/yaml-vim'
+
+" }}}
+" JSON {{{
 
 " View JSON files in VIM with pinache.
 Plug 'elzr/vim-json'
@@ -173,8 +178,6 @@ Plug 'voldikss/vim-floaterm'
 " }}}
 " Organization/Productivity {{{
 
-" Taskwarrior integration
-Plug 'blindFS/vim-taskwarrior'
 
 " }}}
 " Appearance {{{
@@ -188,14 +191,12 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Decoration {{{
 
-" Pretty icons
-Plug 'ryanoasis/vim-devicons'
-
 " }}}
 
 " Color Schemes {{{
 
 Plug 'rafi/awesome-vim-colorschemes'
+Plug 'morhetz/gruvbox'
 
 " }}}
 " }}}
@@ -203,6 +204,11 @@ Plug 'rafi/awesome-vim-colorschemes'
 "
 Plug 'christoomey/vim-tmux-navigator'
 
+" }}}
+
+
+" Rust {{{
+Plug 'rust-lang/rust.vim'
 " }}}
 
 call plug#end()

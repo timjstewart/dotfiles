@@ -35,3 +35,8 @@ augroup Terminal
     autocmd TermOpen * tnoremap <buffer> <Esc> <c-\><c-n>
     autocmd FileType fzf tunmap <buffer> <Esc>
 augroup END
+
+augroup ReasonMl
+    autocmd!
+    autocmd BufRead,BufNewFile *.re set ft=ocaml
+augroup END

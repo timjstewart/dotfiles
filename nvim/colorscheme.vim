@@ -11,8 +11,8 @@ colorscheme gruvbox
 
 " Colorschemes I have liked in the past. {{{
 "
-"colorscheme nord
 "colorscheme dracula
+"colorscheme nord
 "colorscheme jellybeans
 "colorscheme cosmic_latte
 "colorscheme elflord
@@ -34,3 +34,5 @@ highlight NonText guibg=none
 
 " }}}
 
+
+set background=dark
