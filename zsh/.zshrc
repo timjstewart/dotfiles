@@ -18,3 +18,5 @@ alias vi=vim
 
 bindkey "^P" up-line-or-history
 bindkey "^R" history-incremental-search-backward
+
+export PATH=$PATH:$HOME/.local/bin

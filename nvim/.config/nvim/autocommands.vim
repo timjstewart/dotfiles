@@ -23,7 +23,6 @@ augroup END
 "     autocmd InsertEnter,WinLeave * set nocursorline
 " augroup END
 
-
 " TODO: Find better color
 " augroup highlight_current_identifier
 "     autocmd!
@@ -32,11 +31,14 @@ augroup END
 
 augroup Terminal
     autocmd!
-    autocmd TermOpen * tnoremap <buffer> <Esc> <c-\><c-n>
-    autocmd FileType fzf tunmap <buffer> <Esc>
+    autocmd TermOpen *        tnoremap <buffer> <Esc> <c-\><c-n>
+    " When you open a terminal, automatically enter insert mode.
+    autocmd TermOpen term://* startinsert
+    autocmd FileType fzf      tunmap <buffer> <Esc>
 augroup END
 
 augroup ReasonMl
     autocmd!
     autocmd BufRead,BufNewFile *.re set ft=ocaml
 augroup END
+

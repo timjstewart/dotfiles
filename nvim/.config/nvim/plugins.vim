@@ -16,9 +16,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Navigate to test files.
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-dispatch'
-
-" When vim starts, show recent files, bookmarks, etc.
-Plug 'mhinz/vim-startify'
+Plug 'tpope/vim-obsession'
+Plug 'radenling/vim-dispatch-neovim'
 
 " }}}
 " REPL {{{
@@ -54,6 +53,8 @@ Plug 'tpope/vim-eunuch'
 " }}}
 " Source Code {{{
 
+Plug 'sgur/vim-editorconfig'
+
 " Code completion
 Plug 'Shougo/deoplete.nvim'
 
@@ -80,9 +81,6 @@ Plug 'dyng/ctrlsf.vim'
 
 " Python {{{
 
-" Refactoring
-Plug 'python-rope/ropevim'
-
 " Folding of Python Code
 Plug 'Konfekt/FastFold'
 Plug 'kalekundert/vim-coiled-snake'
@@ -90,6 +88,9 @@ Plug 'kalekundert/vim-coiled-snake'
 " Improved source code indentation for Python
 Plug 'Vimjas/vim-python-pep8-indent'
 
+" }}}
+" Rust {{{
+Plug 'rust-lang/rust.vim'
 " }}}
 " }}}
 " Text {{{
@@ -206,9 +207,5 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " }}}
 
-
-" Rust {{{
-Plug 'rust-lang/rust.vim'
-" }}}
 
 call plug#end()

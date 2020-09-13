@@ -28,7 +28,7 @@ set undofile
 " Don't redraw screen during macro execution.  Use :redraw to force a redraw
 set lazyredraw
 
-set wildmode=longest:full
+set wildmode=full
 
 " UNICODE
 set encoding=UTF-8

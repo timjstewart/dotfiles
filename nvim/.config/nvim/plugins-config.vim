@@ -57,13 +57,10 @@ highlight ALEWarningSign ctermfg=11 ctermbg=15 guifg=#ED6237 guibg=#F5F5F5
 
 " Slime
 
-let g:slime_target = "tmux"
-let g:slime_dont_ask_default = 1
+let g:slime_target = "neovim"
+let g:slime_vimterminal_config = {"term_finish": "close"}
+" let g:slime_dont_ask_default = 1
 let g:slime_python_ipython = 1
-let g:slime_default_config = {
-            \ "socket_name": "default",
-            \ "target_pane": "{right-of}"
-            \ }
 
 " Airline
 let g:airline_theme='cobalt2'
@@ -164,6 +161,7 @@ let g:gutentags_ctags_exclude = [ '*.md', '*.json', '*.js', '*.css', '*.html', '
 " Testing
 let g:test#preserve_screen = 1
 let test#python#runner = 'pytest'
+let test#strategy = 'dispatch'
 
 
 " Goyo
@@ -219,4 +217,7 @@ let g:ctrlsf_auto_preview = 1
 let g:ctrlsf_auto_focus = {
             \ "at" : "start"
             \ }
+
+" Dispatch
+
 
