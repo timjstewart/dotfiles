@@ -20,3 +20,4 @@ bindkey "^P" up-line-or-history
 bindkey "^R" history-incremental-search-backward
 
 export PATH=$PATH:$HOME/.local/bin
+export FZF_DEFAULT_COMMAND='rg --files' fzf

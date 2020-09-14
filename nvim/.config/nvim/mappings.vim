@@ -34,8 +34,10 @@ nnoremap <leader>gp :Gpush<cr>
 nnoremap <leader>gb :Gblame<cr>
 
 " Linting Error Movement
-nnoremap ]r :ALENextWrap<cr>
-nnoremap [r :ALEPreviousWrap<cr>
+nmap <silent> [W <Plug>(ale_first)
+nmap <silent> [w <Plug>(ale_previous_wrap)
+nmap <silent> ]w <Plug>(ale_next_wrap)
+nmap <silent> ]W <Plug>(ale_last)
 
 " keep visual selection when indenting/outdenting.
 vmap < <gv
@@ -82,4 +84,5 @@ nnoremap ¬ :vertical resize +3<cr>      " <ALT+l> increase width
 " " than Ctrl-^ and faster than Ctrl-O/Ctrl-I.
 " nnoremap <TAB> :bnext<cr>
 " nnoremap <S-TAB> :bprevious<cr>
+
 
