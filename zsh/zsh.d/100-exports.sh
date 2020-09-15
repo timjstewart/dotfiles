@@ -22,3 +22,5 @@ export FZF_DEFAULT_OPTS="
 
 export ANDROID_HOME=/Users/$USER/Library/Android/sdk
 
+export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim
+

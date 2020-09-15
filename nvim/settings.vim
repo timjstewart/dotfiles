@@ -9,7 +9,7 @@ filetype off
 filetype indent plugin on
 
 " Always show tabs
-set showtabline=2
+set showtabline=1
 
 " terminal color enhancements
 set termguicolors
@@ -28,8 +28,7 @@ set undofile
 " Don't redraw screen during macro execution.  Use :redraw to force a redraw
 set lazyredraw
 
-" Complete only until point of ambiguity
-set wildmode=list:longest
+set wildmode=longest:full
 
 " UNICODE
 set encoding=UTF-8
@@ -76,7 +75,7 @@ set number relativenumber
 set shiftwidth=4
 
 " Vim should change to the directory of files I edit.
-set autochdir
+set noautochdir
 
 " When TAB is hit, enter spaces
 set expandtab
@@ -113,7 +112,7 @@ set visualbell
 
 " Show special characters and pick which characters are displayed.
 set list
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸.
 
 " Show feedback for substitute command while I'm creating the command.
 set inccommand=split
@@ -121,17 +120,11 @@ set inccommand=split
 " Ignore files I rarely care about.
 set wildignore+=*/.git/*,*/tmp/*,*.swp,*/venv/*,.DS_Store,*.pyc,tags
 
-set background=dark
-
 "===============================================================================
 " Project Setup
 "===============================================================================
 
-" Turing (so that gf works on imports).  The ** at the end of the path means
-" that the directory should be recursively searched.
-set path+=~/src/math-engine/primary/**
-
-set completeopt=menuone,preview
+set path=.,,**
 
 " 999 was too visually jarring for me
 set scrolloff=3
@@ -143,3 +136,26 @@ set maxmempattern=2000
 
 set colorcolumn=120
 
+set nomodeline
+
+set completeopt=menuone,noselect,noinsert
+set shortmess+=c
+
+" Customize Status Line
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=\ %t
+set statusline+=\ (%-0.25{expand('%:h')})
+set statusline+=\ %m
+set statusline+=\ %<
+set statusline+=%#PmenuThumb#
+set statusline+=%=
+set statusline+=%#PmenuSel#
+set statusline+=%y
+set statusline+=%#PmenuThumb#
+set statusline+=%=
+set statusline+=%#PmenuSel#
+set statusline+=\ L:%l/%L\ C:%c
+set statusline+=\ B:%n
+
+set fillchars=stl:=,stlnc:-

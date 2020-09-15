@@ -16,9 +16,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Navigate to test files.
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-obsession'
 
-" When vim starts, show recent files, bookmarks, etc.
-Plug 'mhinz/vim-startify'
 
 " }}}
 " REPL {{{
@@ -47,6 +46,8 @@ Plug 'junegunn/fzf.vim'
 
 " A directory/file viewer
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+Plug 'ryanoasis/vim-devicons'
 
 " UNIX commands
 Plug 'tpope/vim-eunuch'
@@ -78,14 +79,18 @@ Plug 'vim-scripts/taglist.vim'
 " Search and Replace
 Plug 'dyng/ctrlsf.vim'
 
+Plug 'jordwalke/vim-reasonml'
+
+
+
 " Python {{{
 
 " Refactoring
-Plug 'python-rope/ropevim'
+" Plug 'python-rope/ropevim'
 
 " Folding of Python Code
-Plug 'Konfekt/FastFold'
-Plug 'kalekundert/vim-coiled-snake'
+" Plug 'Konfekt/FastFold'
+" Plug 'kalekundert/vim-coiled-snake'
 
 " Improved source code indentation for Python
 Plug 'Vimjas/vim-python-pep8-indent'
@@ -137,6 +142,7 @@ Plug 'vimwiki/vimwiki'
 
 " For editing org files.
 Plug 'jceb/vim-orgmode'
+Plug 'vim-scripts/utl.vim'
 
 " }}}
 " }}}
@@ -182,8 +188,8 @@ Plug 'blindFS/vim-taskwarrior'
 " Status Line {{{
 
 " Fancier status line
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 " }}}
 
 " Decoration {{{
@@ -204,5 +210,8 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'christoomey/vim-tmux-navigator'
 
 " }}}
+
+Plug 'liuchengxu/vim-clap'
+Plug 'stsewd/fzf-checkout.vim'
 
 call plug#end()

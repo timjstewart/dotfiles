@@ -5,6 +5,12 @@
 " |_| |_| |_|\__,_| .__/| .__/|_|_| |_|\__, |___/
 "                 |_|   |_|            |___/
 
+" Window Movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
 " Disable Arrow keys (so that I learn to avoid using them)
 map <Up> <nop>
 map <Down> <nop>
@@ -15,7 +21,7 @@ map <Right> <nop>
 inoremap fd <ESC>
 
 " FZF Mappings
-map <leader>bb :Buffers<cr>
+nnoremap <leader>bb :Buffers<cr>
 nnoremap <leader>s :Ag<cr>
 nnoremap <leader>bc :BCommits<cr>
 nnoremap <f5> :Rg <C-r><C-w><cr>
@@ -41,11 +47,6 @@ nnoremap [r :ALEPreviousWrap<cr>
 vmap < <gv
 vmap > >gv
 
-" Window Movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
 
 " I accidentally hit F1 a lot and I know about :he.
 inoremap <f1> <nop>
@@ -64,12 +65,10 @@ nnoremap <leader>t :20sp +terminal <cr> i
 nnoremap <leader>nt :NERDTreeToggle<cr>
 nnoremap <leader>nf :NERDTreeFind<cr>
 
-" vim mappings
-nnoremap <leader>ve :vsplit $MYVIMRC<cr>
-nnoremap <leader>vs :source $MYVIMRC<cr>
-
 " Turn spelling on/off.
 nnoremap <leader>st :set spell!<cr>
+
+nnoremap <leader>f :find<space>
 
 " Resize current window. Using <ALT+h> (or j, k, or h) don't work on the Mac.
 " See: https://stackoverflow.com/a/5382863/26002
@@ -83,3 +82,7 @@ nnoremap ¬ :vertical resize +3<cr>      " <ALT+l> increase width
 " nnoremap <TAB> :bnext<cr>
 " nnoremap <S-TAB> :bprevious<cr>
 
+inoremap <c-c> <ESC>
+
+
+nnoremap - :Explore %:h<CR>

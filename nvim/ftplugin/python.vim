@@ -4,3 +4,15 @@ nnoremap <leader>pF :! (cd $(git rev-parse --show-toplevel)/math-service && flak
 
 
 set textwidth=120
+
+
+
+" syntax match Statement /not in/ conceal cchar=∉
+" syntax keyword Statement lambda conceal cchar=λ
+" syntax keyword Statement def conceal cchar=▶
+" syntax match Statement /==/ conceal cchar=≡
+" syntax match Statement /!=/ conceal cchar=≠
+" syntax match Statement /=/ conceal cchar=←
+" syntax match Statement /->/ conceal cchar=⇒
+" hi! link Conceal Statement
+" set conceallevel=2

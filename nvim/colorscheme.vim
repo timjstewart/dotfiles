@@ -8,6 +8,7 @@
 " Colorschemes{{{
 "
 colorscheme gruvbox
+set background=dark
 
 " Colorschemes I have liked in the past. {{{
 "
@@ -27,10 +28,7 @@ colorscheme gruvbox
 " }}}
 " Hightlights {{{
 "
-highlight Normal ctermbg=none
-highlight NonText ctermbg=none
-highlight Normal guibg=none
-highlight NonText guibg=none
+highlight Normal ctermbg=NONE guibg=NONE
+highlight NonText ctermbg=NONE guibg=NONE
 
 " }}}
-
