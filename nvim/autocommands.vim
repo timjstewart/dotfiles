@@ -6,7 +6,7 @@
 
 
 " Source init.vim every time it's saved
-augroup source_init_vim
+augroup SourceVimScriptConfig
     autocmd!
     autocmd BufWritePost ~/.dotfiles/nvim/*.vim silent :source %
 augroup END
@@ -17,21 +17,12 @@ augroup DiffMappings
     autocmd OptionSet diff nnoremap <buffer> <leader>j :diffget //3<CR>
 augroup END
 
-" augroup cursorline_ag
-"     autocmd!
-"     autocmd InsertLeave,WinEnter * set cursorline
-"     autocmd InsertEnter,WinLeave * set nocursorline
-" augroup END
-
-
-" TODO: Find better color
-" augroup highlight_current_identifier
-"     autocmd!
-"     autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
-" augroup END
-
 augroup Terminal
     autocmd!
     autocmd TermOpen * tnoremap <buffer> <Esc> <c-\><c-n>
+    autocmd TermOpen * tnoremap <buffer> <c-v><Esc> <Esc>
+    autocmd TermOpen * set nonumber norelativenumber
     autocmd FileType fzf tunmap <buffer> <Esc>
+    " When you open a terminal, automatically enter insert mode.
+    autocmd TermOpen term://* startinsert
 augroup END

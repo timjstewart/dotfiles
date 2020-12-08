@@ -27,6 +27,10 @@ nnoremap <leader>bc :BCommits<cr>
 nnoremap <f5> :Rg <C-r><C-w><cr>
 nnoremap <S-f5> :Rg "<C-r><C-a>"<cr>
 
+" Tagbar Mappings
+nnoremap <leader>ol :Tagbar<cr>
+nnoremap <leader>og :TagbarForceUpdate<cr>
+
 " Edit alternate file
 nmap <leader><tab> <C-^>
 

@@ -18,7 +18,6 @@ Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-obsession'
 
-
 " }}}
 " REPL {{{
 
@@ -26,7 +25,7 @@ Plug 'tpope/vim-obsession'
 Plug 'jpalardy/vim-slime'
 
 " Figure this one out.
-Plug 'axvr/zepl.vim'
+" Plug 'axvr/zepl.vim'
 
 " }}}
 " Snippets {{{
@@ -45,9 +44,9 @@ Plug 'junegunn/fzf.vim'
 " File System {{{
 
 " A directory/file viewer
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 
 " UNIX commands
 Plug 'tpope/vim-eunuch'
@@ -74,13 +73,11 @@ Plug 'tpope/vim-commentary'
 Plug 'ludovicchabant/vim-gutentags'
 "
 " Still slow?
-Plug 'vim-scripts/taglist.vim'
+"Plug 'vim-scripts/taglist.vim'
+Plug 'preservim/tagbar'
 
 " Search and Replace
-Plug 'dyng/ctrlsf.vim'
-
-Plug 'jordwalke/vim-reasonml'
-
+" Plug 'dyng/ctrlsf.vim'
 
 
 " Python {{{
@@ -124,7 +121,7 @@ Plug 'mileszs/ack.vim'
 " JSON {{{
 
 " View JSON files in VIM with pinache.
-Plug 'elzr/vim-json'
+" Plug 'elzr/vim-json'
 " }}}
 " Databases {{{
 
@@ -172,30 +169,19 @@ Plug 'aquach/vim-http-client'
 
 Plug 'skywind3000/asyncrun.vim'
 
-Plug 'mbbill/undotree'
+" Plug 'mbbill/undotree'
 
-Plug 'voldikss/vim-floaterm'
+" Plug 'voldikss/vim-floaterm'
 
 " }}}
 " Organization/Productivity {{{
 
-" Taskwarrior integration
-Plug 'blindFS/vim-taskwarrior'
+Plug 'webdevel/tabulous'
 
 " }}}
 " Appearance {{{
 
-" Status Line {{{
-
-" Fancier status line
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
-" }}}
-
 " Decoration {{{
-
-" Pretty icons
-Plug 'ryanoasis/vim-devicons'
 
 " }}}
 
@@ -205,13 +191,13 @@ Plug 'rafi/awesome-vim-colorschemes'
 
 " }}}
 " }}}
-" TMUX {{{
-"
-Plug 'christoomey/vim-tmux-navigator'
-
-" }}}
 
 Plug 'liuchengxu/vim-clap'
+
 Plug 'stsewd/fzf-checkout.vim'
 
 call plug#end()
+
+
+packadd cfilter
+

@@ -3,9 +3,9 @@ nnoremap <leader>pf :! flake8 %<CR>
 nnoremap <leader>pF :! (cd $(git rev-parse --show-toplevel)/math-service && flake8)<CR>
 
 
-set textwidth=120
-
-
+setlocal textwidth=100
+setlocal listchars=tab:▸.
+setlocal colorcolumn=120
 
 " syntax match Statement /not in/ conceal cchar=∉
 " syntax keyword Statement lambda conceal cchar=λ

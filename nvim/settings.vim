@@ -4,6 +4,7 @@
 " \__ \  __/ |_| |_| | | | | (_| \__ \
 " |___/\___|\__|\__|_|_| |_|\__, |___/
 "                           |___/
+
 syntax on
 filetype off
 filetype indent plugin on
@@ -28,7 +29,7 @@ set undofile
 " Don't redraw screen during macro execution.  Use :redraw to force a redraw
 set lazyredraw
 
-set wildmode=longest:full
+set wildmode=longest:full,full
 
 " UNICODE
 set encoding=UTF-8
@@ -74,7 +75,7 @@ set number relativenumber
 " Set how many spaces an indent should insert.
 set shiftwidth=4
 
-" Vim should change to the directory of files I edit.
+" I'm trying out the whole pwd == project root approach to things and it's going fairly well so far.
 set noautochdir
 
 " When TAB is hit, enter spaces
@@ -112,17 +113,12 @@ set visualbell
 
 " Show special characters and pick which characters are displayed.
 set list
-set listchars=tab:▸.
 
 " Show feedback for substitute command while I'm creating the command.
 set inccommand=split
 
 " Ignore files I rarely care about.
 set wildignore+=*/.git/*,*/tmp/*,*.swp,*/venv/*,.DS_Store,*.pyc,tags
-
-"===============================================================================
-" Project Setup
-"===============================================================================
 
 set path=.,,**
 
@@ -133,8 +129,6 @@ set suffixesadd=.py
 
 " I was getting errors using Ctrl-P some times.
 set maxmempattern=2000
-
-set colorcolumn=120
 
 set nomodeline
 
@@ -158,4 +152,13 @@ set statusline+=%#PmenuSel#
 set statusline+=\ L:%l/%L\ C:%c
 set statusline+=\ B:%n
 
-set fillchars=stl:=,stlnc:-
+" set fillchars=stl:=,stlnc:-
+set fcs=eob:\ ,
+
+
+" Disable language providers I don't need.
+let g:loaded_perl_provider = 0
+let g:loaded_python_provider = 0
+let g:loaded_node_provider = 0
+let g:loaded_ruby_provider = 0
+let g:python_host_prog = ''

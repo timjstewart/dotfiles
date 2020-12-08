@@ -58,7 +58,6 @@ let g:ale_linters = {
    \}
 let g:ale_fixers = {
    \ 'python': [
-   \    'black',
    \    'autopep8',
    \  ],
    \}
@@ -78,26 +77,6 @@ let g:slime_default_config = {
             \ "socket_name": "default",
             \ "target_pane": "{right-of}"
             \ }
-
-" " Airline
-" let g:airline_theme='cobalt2'
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#show_tab_nr = 1
-" let g:airline#extensions#tabline#tab_nr_type= 2
-" let g:airline#extensions#tabline#show_tab_type = 1
-" let g:airline_powerline_fonts = 1
-" let g:airline#extensions#tabline#formatter = 'unique_tail'
-" let g:airline#extensions#ale#enabled = 1
-
-
-" " Tagbar
-" " let g:tagbar_autoclose = 1
-" let g:tagbar_autofocus = 1
-" let g:tagbar_sort = 1
-" let g:tagbar_case_insensitive = 1
-" let g:tagbar_compact = 1
-" " Auto preview window does not go away
-" let g:tagbar_autopreview = 0
 
 
 " " Deoplete
@@ -167,15 +146,17 @@ let g:ctrlp_custom_ignore = {
             \ 'file': '\v\.(exe|so|dll)$',
             \ }
 
+if executable('rg')
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  let g:ctrlp_use_caching = 0
+endif
+
 " indentLine
 let g:indentLine_char = '┊'
 
 " Gutentags
 
-"let g:gutentags_exclude_filetypes = [ 'markdown' ]
-" When ctags processes a large markdown file, it hangs
 let g:gutentags_ctags_exclude = [ '*.md', '*.json', '*.js', '*.css', '*.html', '*Lexer.py', '*Visitor.py', '*Parser.py', '*.svg' ]
-
 
 " Testing
 let g:test#preserve_screen = 1
@@ -258,3 +239,10 @@ let g:netrw_browse_split = 0
 let g:netrw_liststyle = 3
 let g:netrw_sizestyle = "H"
 let g:netrw_sort_by = "name"
+
+" Tagbar
+
+let g:tagbar_zoomwidth = 0
+let g:tagbar_compact = 1
+let g:tagbar_autopreview = 1
+let g:tagbar_previewwin_pos = 'rightbelow'

@@ -8,7 +8,7 @@
 " Python Settings {{{
 
 " Tell Neovim where to find Python 2 and 3 interpreters.
-let g:python_host_prog = '/usr/local/opt/python/libexec/bin/python'
+" let g:python_host_prog = '/usr/local/opt/python/libexec/bin/python'
 let g:python3_host_prog = '/usr/local/opt/python/libexec/bin/python'
 
 " Setup virtualenv directory
