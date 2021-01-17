@@ -9,27 +9,10 @@
 " Configure Plugins
 "===============================================================================
 
-" NERDTree
-"
-let g:NERDTreeDirArrowCollapsible = '▾'
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrows = 1
-let g:NERDTreeHijackNetrw = 1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeQuitOnOpen = 0  " close after opening bookmark or file.
-let g:NERDTreeShowBookmarks = 1
-let g:NERDTreeShowLineNumbers = 1  " Not relative line numbers.
-let g:NERDTreeWinSize = 30
-let NERDTreeIgnore=[
-            \ '.pyc$',
-            \ '\.DS_Store$',
-            \ '__pycache__$',
-            \ 'venv$',
-            \ 'node_modules$'
-            \ ]
 
 " ALE
 "
+let g:ale_completion_enabled = 1
 let g:ale_linters_explicit = 1
 let g:ale_python_mypy_options = '--follow-imports skip --ignore-missing-imports'
 let g:ale_cache_executable_check_failures = 0
@@ -41,7 +24,7 @@ let g:ale_sign_warning = "⚠"
 let g:ale_python_mypy_executable = '/Users/STEWTJ3/.local/bin/mypy'
 let b:ale_warn_about_trailing_whitespace = 1
 let g:ale_linters = {
-   \ 'python': ['flake8', 'pylint', 'mypy'],
+   \ 'python': [ 'pyls', 'flake8', 'pylint', 'mypy'],
    \ }
 let b:ale_fixers = {
    \ 'python': ['autopep8', 'black'],
@@ -72,7 +55,6 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#ale#enabled = 1
 
-
 " " Tagbar
 " " let g:tagbar_autoclose = 1
 " let g:tagbar_autofocus = 1
@@ -82,45 +64,14 @@ let g:airline#extensions#ale#enabled = 1
 " " Auto preview window does not go away
 " let g:tagbar_autopreview = 0
 
-
-" " Deoplete
-"
-" let g:deoplete#enable_at_startup = 1
-
 " UltiSnips
-"
+
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-
-" Startify
-
-let g:startify_lists = [
-      \ { 'type': 'files',     'header': ['   MRU']            },
-      \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
-      \ { 'type': 'sessions',  'header': ['   Sessions']       },
-      \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-      \ { 'type': 'commands',  'header': ['   Commands']       },
-      \ ]
-
-let g:startify_session_dir = '~/.vim/session'
-let g:startify_session_persistence = 1
-let g:startify_custom_header = []
-let g:startify_files_number = 5
-
-let g:startify_commands = [
-\   { 'up': [ 'Update Plugins', ':PlugUpdate' ] },
-\   { 'ug': [ 'Upgrade Plugin Manager', ':PlugUpgrade' ] },
-\ ]
-
-let g:startify_bookmarks = [
-    \ { 'c': '~/.config/nvim/init.vim' },
-    \ { 'g': '~/.gitconfig' },
-    \ { 'z': '~/.zshrc' }
-\ ]
-
 " DeleteTrailingWhitespace
+
 let g:DeleteTrailingWhitespace = 1
 let g:DeleteTrailingWhitespace_Action = 'delete'
 
@@ -130,33 +81,22 @@ let g:rg_command = 'rg --vimgrep -g ''!tags'''
 
 " Browsing
 let g:netrw_browsex_viewer= "open"
-
-" CtrlP
-if executable('rg')
-  " message "Configuring rg..."
-  set grepprg=rg\ --color=never
-  "let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-  let g:ctrlp_use_caching = 0
-endif
-
-let g:ctrlp_by_filename = 1
-let g:ctrlp_match_window = 'bottom,order:btt'
-let g:ctrlp_match_current_file = 1
-
-let g:ctrlp_extensions = ['tag', 'dir', 'mixed', 'bookmarkdir']
-let g:ctrlp_custom_ignore = '\v[\/]\htmlcov$'
-let g:ctrlp_working_path_mode = 'ra'
-
-
-" indentLine
-let g:indentLine_char = '┊'
+let g:netrw_liststyle = 1  " tree style
 
 " Gutentags
 
-"let g:gutentags_exclude_filetypes = [ 'markdown' ]
 " When ctags processes a large markdown file, it hangs
-let g:gutentags_ctags_exclude = [ '*.md', '*.json', '*.js', '*.css', '*.html', '*Lexer.py', '*Visitor.py', '*Parser.py', '*.svg' ]
-
+let g:gutentags_ctags_exclude = [
+    \ '*.md',
+    \ '*.json',
+    \ '*.js',
+    \ '*.css',
+    \ '*.html',
+    \ '*Lexer.py',
+    \ '*Visitor.py',
+    \ '*Parser.py',
+    \ '*.svg'
+    \ ]
 
 " Testing
 let g:test#preserve_screen = 1
@@ -164,23 +104,14 @@ let test#python#runner = 'pytest'
 let test#strategy = 'dispatch'
 
 
-" Goyo
-let g:goyo_linenr=1
-let g:goyo_width=120
-
-
-set completeopt=menuone,noselect,noinsert
-set shortmess+=c
 inoremap <c-c> <ESC>
 
 " Disable Jedi-vim autocompletion and enable call-signatures options
 let g:jedi#auto_initialization = 1
-let g:jedi#completions_enabled = 0
+let g:jedi#completions_enabled = 1
 let g:jedi#auto_vim_configuration = 0
-let g:jedi#smart_auto_mappings = 0
-let g:jedi#popup_on_dot = 0
-let g:jedi#completions_command = ""
-let g:jedi#show_call_signatures = "2"
+"let g:jedi#smart_auto_mappings = 0
+let g:jedi#show_call_signatures = 2
 
 let g:lens#disabled_filetypes = ['nerdtree']
 
@@ -218,6 +149,8 @@ let g:ctrlsf_auto_focus = {
             \ "at" : "start"
             \ }
 
-" Dispatch
+" LSP
 
-
+lua << EOF
+require'lspconfig'.pyls.setup{}
+EOF

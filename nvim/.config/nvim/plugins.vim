@@ -10,14 +10,11 @@ call plug#begin('~/.vim/plugged')
 
 " Project {{{
 
-" " CtrlP interface for finding buffers, recent files, etc.
-Plug 'ctrlpvim/ctrlp.vim'
-
 " Navigate to test files.
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-obsession'
 Plug 'radenling/vim-dispatch-neovim'
+Plug 'tpope/vim-obsession'
 
 " }}}
 " REPL {{{
@@ -25,27 +22,20 @@ Plug 'radenling/vim-dispatch-neovim'
 " Send code to another tmux pane (e.g. REPL)
 Plug 'jpalardy/vim-slime'
 
-" Figure this one out.
-Plug 'axvr/zepl.vim'
-
-" }}}
 " Snippets {{{
 
 " A powerful snippet insertion plugin.
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " }}}
 " FZF {{{
 
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " }}}
 " File System {{{
-
-" A directory/file viewer
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 " UNIX commands
 Plug 'tpope/vim-eunuch'
@@ -53,18 +43,22 @@ Plug 'tpope/vim-eunuch'
 " }}}
 " Source Code {{{
 
-Plug 'sgur/vim-editorconfig'
+" Language Server Protocol (LSP)
+Plug 'neovim/nvim-lspconfig'
 
-" Code completion
-Plug 'Shougo/deoplete.nvim'
+" Configure the editor for specific projects
+" See: https://github.com/editorconfig/editorconfig-vim#supported-properties
+Plug 'sgur/vim-editorconfig'
 
 " Asynchronous Linter Engine
 Plug 'dense-analysis/ale'
 "
 " Exchange things like parameters
+" cx {motion} cx {motion}
 Plug 'tommcdo/vim-exchange'
 
 " Key mappings for navigating
+" ]f  [f  - next/previous file
 Plug 'tpope/vim-unimpaired'
 
 " gc to comment out selection
@@ -73,20 +67,17 @@ Plug 'tpope/vim-commentary'
 " Manages your tags file for you.
 Plug 'ludovicchabant/vim-gutentags'
 "
-" Still slow?
-Plug 'vim-scripts/taglist.vim'
+" Use Tags to navigate the current buffer.
+Plug 'preservim/tagbar'
 
 " Search and Replace
 Plug 'dyng/ctrlsf.vim'
 
 " Python {{{
 
-" Folding of Python Code
-Plug 'Konfekt/FastFold'
-Plug 'kalekundert/vim-coiled-snake'
-
 " Improved source code indentation for Python
 Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'davidhalter/jedi-vim'
 
 " }}}
 " Rust {{{
@@ -99,25 +90,21 @@ Plug 'rust-lang/rust.vim'
 Plug 'vim-scripts/DeleteTrailingWhitespace'
 
 " Easily surround text objects with characters.
+" ys{object}{char}
 Plug 'tpope/vim-surround'
 
 " Sort of like iedit
+" C-n, C-n, C-p, C-x
+" c, s, I, A
 Plug 'terryma/vim-multiple-cursors'
 
 " File skeletons
 Plug 'pgilad/vim-skeletons'
 
 " }}}
-" Search {{{
-
-" :Rg to search for text
-Plug 'jremmen/vim-ripgrep'
-Plug 'mileszs/ack.vim'
-
-" }}}
 " Information {{{
 
-" JSON {{{
+" YAML {{{
 "
 Plug 'mrk21/yaml-vim'
 
@@ -129,10 +116,8 @@ Plug 'elzr/vim-json'
 " }}}
 " Databases {{{
 
-" Accessing Databases via vim command line
+" Accessing Databases
 Plug 'tpope/vim-dadbod'
-
-" User interface built on top of dadbod
 Plug 'kristijanhusak/vim-dadbod-ui'
 
 " }}}
@@ -146,39 +131,18 @@ Plug 'jceb/vim-orgmode'
 
 " }}}
 " }}}
-" Testing {{{
-
-" Run tests from VIM.
-Plug 'janko-m/vim-test'
-" }}}
 " Version Control {{{
 
-" Git integration
 Plug 'tpope/vim-fugitive'
-
 Plug 'tpope/vim-rhubarb'
-
-" Gitlab Support
 Plug 'shumphrey/fugitive-gitlab.vim'
 
 " }}}
 " Utilities {{{
 
-" Still needed for terminal?
-Plug 'rbgrouleff/bclose.vim'
-
 " Send HTTP requests
 Plug 'aquach/vim-http-client'
-
-Plug 'skywind3000/asyncrun.vim'
-
-Plug 'mbbill/undotree'
-
 Plug 'voldikss/vim-floaterm'
-
-" }}}
-" Organization/Productivity {{{
-
 
 " }}}
 " Appearance {{{
@@ -190,21 +154,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " }}}
 
-" Decoration {{{
-
-" }}}
-
 " Color Schemes {{{
-
-Plug 'rafi/awesome-vim-colorschemes'
 Plug 'morhetz/gruvbox'
-
 " }}}
-" }}}
-" TMUX {{{
-"
-Plug 'christoomey/vim-tmux-navigator'
-
 " }}}
 
 

@@ -15,11 +15,12 @@ map <Right> <nop>
 inoremap fd <ESC>
 
 " FZF Mappings
-map <leader>bb :Buffers<cr>
-nnoremap <leader>s :Ag<cr>
+nnoremap <leader>bb :Buffers<cr>
+nnoremap <C-p>      :Files<cr>
+nnoremap <leader>sf :Ag<cr>
 nnoremap <leader>bc :BCommits<cr>
-nnoremap <f5> :Rg <C-r><C-w><cr>
-nnoremap <S-f5> :Rg "<C-r><C-a>"<cr>
+nnoremap <f5>       :Rg <C-r><C-w><cr>
+nnoremap <S-f5>     :Rg "<C-r><C-a>"<cr>
 
 " Edit alternate file
 nmap <leader><tab> <C-^>
@@ -60,11 +61,9 @@ nnoremap <S-f2> :cprev<cr>
 nnoremap <f3> :lnext<cr>
 nnoremap <S-f3> :lprev<cr>
 
-nnoremap <leader>t :20sp +terminal <cr> i
-
-" NERDTree mappings
-nnoremap <leader>nt :NERDTreeToggle<cr>
-nnoremap <leader>nf :NERDTreeFind<cr>
+" Terminal
+nnoremap <leader>t :20sp +terminal <cr>
+nnoremap <leader>ft :FloatermToggle<cr>
 
 " vim mappings
 nnoremap <leader>ve :vsplit $MYVIMRC<cr>
@@ -80,9 +79,8 @@ nnoremap ∆ :resize -3<cr>               " <ALT+j> decrease height
 nnoremap ˚ :resize +3<cr>               " <ALT+k> increase height
 nnoremap ¬ :vertical resize +3<cr>      " <ALT+l> increase width
 
-" " Go to next and previous tabs with the TAB key in normal mode.  More powerful
-" " than Ctrl-^ and faster than Ctrl-O/Ctrl-I.
-" nnoremap <TAB> :bnext<cr>
-" nnoremap <S-TAB> :bprevious<cr>
+" Tagbar Mappings
+nnoremap <leader>tt :TagbarToggle<cr>
 
-
+" Explore Current Directory
+nnoremap - :Ex<cr>

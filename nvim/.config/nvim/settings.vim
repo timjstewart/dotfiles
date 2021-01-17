@@ -129,8 +129,6 @@ set wildignore+=*/.git/*,*/tmp/*,*.swp,*/venv/*,.DS_Store,*.pyc,tags
 " that the directory should be recursively searched.
 set path+=**
 
-set completeopt=menuone,preview
-
 " 999 was too visually jarring for me
 set scrolloff=3
 
@@ -142,3 +140,6 @@ set maxmempattern=2000
 set colorcolumn=120
 
 set history=200
+
+set completeopt=menuone,noselect,noinsert
+set shortmess+=c

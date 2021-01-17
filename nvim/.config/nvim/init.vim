@@ -9,8 +9,8 @@
 runtime python.vim
 runtime settings.vim
 runtime plugins.vim
-runtime plugins-config.vim
 runtime colorscheme.vim
+runtime plugins-config.vim
 runtime mappings.vim
 runtime autocommands.vim
 runtime abbrevs.vim

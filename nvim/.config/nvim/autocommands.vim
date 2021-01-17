@@ -17,18 +17,6 @@ augroup DiffMappings
     autocmd OptionSet diff nnoremap <buffer> <leader>j :diffget //3<CR>
 augroup END
 
-" augroup cursorline_ag
-"     autocmd!
-"     autocmd InsertLeave,WinEnter * set cursorline
-"     autocmd InsertEnter,WinLeave * set nocursorline
-" augroup END
-
-" TODO: Find better color
-" augroup highlight_current_identifier
-"     autocmd!
-"     autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
-" augroup END
-
 augroup Terminal
     autocmd!
     autocmd TermOpen *        tnoremap <buffer> <Esc> <c-\><c-n>

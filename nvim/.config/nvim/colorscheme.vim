@@ -5,34 +5,23 @@
 "  \___\___/|_|\___/|_|  |___/\___|_| |_|\___|_| |_| |_|\___||___/
 
 
-" Colorschemes{{{
+" Colorschemes {{{
 "
 colorscheme gruvbox
 
-" Colorschemes I have liked in the past. {{{
-"
-"colorscheme dracula
-"colorscheme nord
-"colorscheme jellybeans
-"colorscheme cosmic_latte
-"colorscheme elflord
-"colorscheme koehler
-"colorscheme desert
-"colorscheme afterglow
-"colorscheme materialbox
-"colorscheme parsec
-"colorscheme ayu
+" }}}
 
-" }}}
-" }}}
 " Hightlights {{{
 "
-highlight Normal ctermbg=none
+highlight Normal  ctermbg=none
 highlight NonText ctermbg=none
-highlight Normal guibg=none
+highlight Normal  guibg=none
 highlight NonText guibg=none
 
 " }}}
 
+" Background {{{
 
 set background=dark
+
+" }}}

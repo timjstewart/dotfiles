@@ -16,7 +16,6 @@ endfunction
 
 
 let g:CheckList_directory = "~/.checklists"
-
 let s:CheckList_template_directory = printf("%s/templates", g:CheckList_directory)
 let s:CheckList_ongoing_directory = printf("%s/ongoing", g:CheckList_directory)
 let s:CheckList_completed_directory = printf("%s/completed", g:CheckList_directory)
@@ -90,7 +89,6 @@ function! CheckListArchive()
     bdelete
 endfunction
 
-
 function! PipPackageDict()
     let result = {}
     let cmdOutput = systemlist(printf("pip freeze"))
@@ -120,17 +118,6 @@ function! PipPackageVersion(packageName)
     endfor
 endfunction
 
-
-" function ProjectRoot()
-"     let cwd = getcwd()
-"     let projectMarkers = globpath(cwd, ".git")
-"     if projectMarkers
-"         return cwd
-"     else
-
-"     endif
-" endfunction
-
 function! ResolveMergeConclicts()
     " Run Gvdiffsplit on the current file
     :normal dv
@@ -141,7 +128,6 @@ function! ResolveMergeConclicts()
     " Move the first conflict to the top of the window
     :normal zt
 endfunction
-
 
 function! PytestFunction()
     let test_name = expand("<cword>")
