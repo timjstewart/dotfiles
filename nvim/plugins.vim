@@ -45,7 +45,6 @@ Plug 'junegunn/fzf.vim'
 
 " A directory/file viewer
 " Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-
 " Plug 'ryanoasis/vim-devicons'
 
 " UNIX commands
@@ -191,8 +190,6 @@ Plug 'rafi/awesome-vim-colorschemes'
 
 " }}}
 " }}}
-
-Plug 'liuchengxu/vim-clap'
 
 Plug 'stsewd/fzf-checkout.vim'
 

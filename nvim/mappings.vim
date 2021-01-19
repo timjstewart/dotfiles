@@ -42,6 +42,8 @@ nnoremap <leader>ga :Git add %:p<cr><cr>
 nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gp :Gpush<cr>
 nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gc :GBranches<cr>
+
 
 " Linting Error Movement
 nnoremap ]r :ALENextWrap<cr>
@@ -50,7 +52,6 @@ nnoremap [r :ALEPreviousWrap<cr>
 " keep visual selection when indenting/outdenting.
 vmap < <gv
 vmap > >gv
-
 
 " I accidentally hit F1 a lot and I know about :he.
 inoremap <f1> <nop>
@@ -65,10 +66,6 @@ nnoremap <S-f3> :lprev<cr>
 
 nnoremap <leader>t :20sp +terminal <cr> i
 
-" NERDTree mappings
-nnoremap <leader>nt :NERDTreeToggle<cr>
-nnoremap <leader>nf :NERDTreeFind<cr>
-
 " Turn spelling on/off.
 nnoremap <leader>st :set spell!<cr>
 
@@ -81,12 +78,7 @@ nnoremap ∆ :resize -3<cr>               " <ALT+j> decrease height
 nnoremap ˚ :resize +3<cr>               " <ALT+k> increase height
 nnoremap ¬ :vertical resize +3<cr>      " <ALT+l> increase width
 
-" " Go to next and previous tabs with the TAB key in normal mode.  More powerful
-" " than Ctrl-^ and faster than Ctrl-O/Ctrl-I.
-" nnoremap <TAB> :bnext<cr>
-" nnoremap <S-TAB> :bprevious<cr>
-
 inoremap <c-c> <ESC>
 
-
 nnoremap - :Explore %:h<CR>
+nnoremap <leader>fr :edit %:h<cr>
