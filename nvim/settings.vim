@@ -155,6 +155,8 @@ set statusline+=\ B:%n
 " set fillchars=stl:=,stlnc:-
 set fcs=eob:\ ,
 
+" Use only Python 3
+set pyxversion=3
 
 " Disable language providers I don't need.
 let g:loaded_perl_provider = 0
@@ -162,3 +164,7 @@ let g:loaded_python_provider = 0
 let g:loaded_node_provider = 0
 let g:loaded_ruby_provider = 0
 let g:python_host_prog = ''
+
+" Autopairs
+let g:AutoPairsShortcutFastWrap = '<C-]>'
+

@@ -5,47 +5,45 @@
 " | .__/|_|\__,_|\__, |_|_| |_|___/
 " |_|            |___/
 
+" Install built-in package.
+packadd! matchit
+
 " Initialize vim-plug
 call plug#begin('~/.vim/plugged')
 
 " Project {{{
 
-" " CtrlP interface for finding buffers, recent files, etc.
-Plug 'ctrlpvim/ctrlp.vim'
-
 " Navigate to test files.
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-dispatch'
+Plug 'radenling/vim-dispatch-neovim'
 Plug 'tpope/vim-obsession'
-
+" }}}
+" Testing {{{
+Plug 'vim-test/vim-test'
+Plug 'reinh/vim-makegreen'
 " }}}
 " REPL {{{
 
 " Send code to another tmux pane (e.g. REPL)
 Plug 'jpalardy/vim-slime'
 
-" Figure this one out.
-" Plug 'axvr/zepl.vim'
-
-" }}}
+"}}}
 " Snippets {{{
 
 " A powerful snippet insertion plugin.
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " }}}
 " FZF {{{
 
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'stsewd/fzf-checkout.vim'
 
 " }}}
 " File System {{{
-
-" A directory/file viewer
-" Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-" Plug 'ryanoasis/vim-devicons'
 
 " UNIX commands
 Plug 'tpope/vim-eunuch'
@@ -53,16 +51,22 @@ Plug 'tpope/vim-eunuch'
 " }}}
 " Source Code {{{
 
-" Code completion
-Plug 'Shougo/deoplete.nvim'
+" Language Server Protocol (LSP)
+Plug 'neovim/nvim-lspconfig'
+
+" Configure the editor for specific projects
+" See: https://github.com/editorconfig/editorconfig-vim#supported-properties
+Plug 'sgur/vim-editorconfig'
 
 " Asynchronous Linter Engine
 Plug 'dense-analysis/ale'
 "
 " Exchange things like parameters
+" cx {motion} cx {motion}
 Plug 'tommcdo/vim-exchange'
 
 " Key mappings for navigating
+" ]f / [f  = next / previous file
 Plug 'tpope/vim-unimpaired'
 
 " gc to comment out selection
@@ -71,26 +75,24 @@ Plug 'tpope/vim-commentary'
 " Manages your tags file for you.
 Plug 'ludovicchabant/vim-gutentags'
 "
-" Still slow?
-"Plug 'vim-scripts/taglist.vim'
+" Use Tags to navigate the current buffer.
 Plug 'preservim/tagbar'
 
 " Search and Replace
-" Plug 'dyng/ctrlsf.vim'
-
+Plug 'dyng/ctrlsf.vim'
 
 " Python {{{
 
-" Refactoring
-" Plug 'python-rope/ropevim'
-
-" Folding of Python Code
-" Plug 'Konfekt/FastFold'
-" Plug 'kalekundert/vim-coiled-snake'
-
 " Improved source code indentation for Python
 Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'davidhalter/jedi-vim'
 
+" }}}
+" Rust {{{
+Plug 'rust-lang/rust.vim'
+" }}}
+" Javascript {{{
+Plug 'pangloss/vim-javascript'
 " }}}
 " }}}
 " Text {{{
@@ -99,35 +101,34 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'vim-scripts/DeleteTrailingWhitespace'
 
 " Easily surround text objects with characters.
+" ys{object}{char}
 Plug 'tpope/vim-surround'
 
 " Sort of like iedit
-Plug 'terryma/vim-multiple-cursors'
+" C-n, C-n, C-p, C-x
+" c, s, I, A
+Plug 'mg979/vim-visual-multi'
 
 " File skeletons
 Plug 'pgilad/vim-skeletons'
 
 " }}}
-" Search {{{
-
-" :Rg to search for text
-Plug 'jremmen/vim-ripgrep'
-Plug 'mileszs/ack.vim'
-
-" }}}
 " Information {{{
 
+" YAML {{{
+"
+Plug 'mrk21/yaml-vim'
+
+" }}}
 " JSON {{{
 
 " View JSON files in VIM with pinache.
-" Plug 'elzr/vim-json'
+Plug 'elzr/vim-json'
 " }}}
 " Databases {{{
 
-" Accessing Databases via vim command line
+" Accessing Databases
 Plug 'tpope/vim-dadbod'
-
-" User interface built on top of dadbod
 Plug 'kristijanhusak/vim-dadbod-ui'
 
 " }}}
@@ -138,63 +139,33 @@ Plug 'vimwiki/vimwiki'
 
 " For editing org files.
 Plug 'jceb/vim-orgmode'
-Plug 'vim-scripts/utl.vim'
 
 " }}}
-" }}}
-" Testing {{{
-
-" Run tests from VIM.
-Plug 'janko-m/vim-test'
 " }}}
 " Version Control {{{
 
-" Git integration
 Plug 'tpope/vim-fugitive'
-
 Plug 'tpope/vim-rhubarb'
-
-" Gitlab Support
 Plug 'shumphrey/fugitive-gitlab.vim'
+Plug 'airblade/vim-gitgutter'
 
 " }}}
 " Utilities {{{
 
-" Still needed for terminal?
-Plug 'rbgrouleff/bclose.vim'
-
 " Send HTTP requests
 Plug 'aquach/vim-http-client'
-
-Plug 'skywind3000/asyncrun.vim'
-
-" Plug 'mbbill/undotree'
-
-" Plug 'voldikss/vim-floaterm'
-
-" }}}
-" Organization/Productivity {{{
-
-Plug 'webdevel/tabulous'
+Plug 'voldikss/vim-floaterm'
 
 " }}}
 " Appearance {{{
 
-" Decoration {{{
-
-" }}}
-
 " Color Schemes {{{
-
-Plug 'rafi/awesome-vim-colorschemes'
-
+Plug 'morhetz/gruvbox'
 " }}}
 " }}}
+" Docker {{{
+Plug 'ekalinin/dockerfile.vim'
+" }}}
 
-Plug 'stsewd/fzf-checkout.vim'
 
 call plug#end()
-
-
-packadd cfilter
-

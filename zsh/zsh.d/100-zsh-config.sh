@@ -1,7 +1,6 @@
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# For configuration options see:
-# https://github.com/caiogondim/bullet-train.zsh
-ZSH_THEME="bullet-train"
+# For configuration options see: https://github.com/caiogondim/bullet-train.zsh
+ZSH_THEME=robbyrussell
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -26,6 +25,7 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   zsh-syntax-highlighting
+  zsh-autosuggestions
 #  git
   brew
   httpie
@@ -41,5 +41,5 @@ plugins=(
 setopt auto_cd cdable_vars auto_menu append_history extended_history \
        hist_find_no_dups hist_ignore_all_dups hist_ignore_space hist_reduce_blanks \
        hist_save_no_dups hist_verify aliases vi
-cdpath=(. $HOME/src)
 
+cdpath=(. $HOME/src)

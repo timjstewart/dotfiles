@@ -610,7 +610,7 @@ dump."
        (sp-pair "'" nil :actions :rem)
        (sp-pair "\"" nil :actions :rem)))
 
-  (global-git-commit-mode t) ;; Git
+  ;; (global-git-commit-mode t) ;; Git
   ;; Start Magit commit in insert mode.
   (add-hook 'git-commit-mode-hook 'evil-insert-state)
   ;; Python
