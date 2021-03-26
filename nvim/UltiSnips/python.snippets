@@ -1,7 +1,6 @@
 snippet ct "Check a value's type"
 if not isinstance(${1:value}, ${2:type}):
-	raise TypeError(
-		f"$1 must be of type: $2, not {type($1}}")
+	raise TypeError(f"$1 must be of type: $2, not {type($1)}")
 endsnippet
 
 snippet _i "__init__ function"
@@ -26,6 +25,7 @@ class ${1:name}(NamedTuple):
 endsnippet
 
 snippet en "Enum Class" b
+@unique
 class ${1:name}(Enum):
 	${2:attribute} = auto()
 	$0
@@ -156,16 +156,26 @@ snippet tparam "parameterized unit test"
 	]
 )
 def test_${1:name}(${2:parameters}):
-	# Arrange
-
-	# Act
-
-	# Assert
-	assert False
+	assert $1() == expected
 endsnippet
 
 snippet traise "unit test that should raise a specific error"
 def test_${1:name}_should_raise():
 	with pytest.raises(${2:ValueError}, match=r"${3:message substring}"):
 		$0
+endsnippet
+
+snippet mpo "mocker patch object"
+mock_${1:function} = mocker.patch.object(${2:object}, "$1")
+mock_$1.return_value = $0
+endsnippet
+
+snippet rve "raise ValueError"
+raise ValueError(f"${1:exception_message}")
+endsnippet
+
+# To surround the selected type with Optional[ ], visually select the type,
+# hit TAB, type in opt, then hit TAB again
+snippet opt "Make type optional"
+Optional[${0:${VISUAL}}]
 endsnippet

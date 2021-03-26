@@ -21,29 +21,16 @@ let g:netrw_altfile = 1
 " ALE
 let g:ale_completion_enabled = 1
 let g:ale_linters_explicit = 1
-let g:ale_python_mypy_options = '--follow-imports skip --ignore-missing-imports'
 let g:ale_cache_executable_check_failures = 0
-let g:ale_python_mypy_use_global = 1
-let g:ale_python_mypy_auto_pipenv = 0
 let g:ale_open_list = 0
 let g:ale_sign_error = "✗"
 let g:ale_sign_warning = "⚠"
-let g:ale_python_mypy_executable = '/Users/STEWTJ3/.local/bin/mypy'
 let b:ale_warn_about_trailing_whitespace = 1
-let g:ale_linters = {
-   \ 'python': [ 'flake8', 'pylint', 'mypy'],
-   \ }
-let b:ale_fixers = {
-   \ 'python': ['autopep8', 'black'],
-   \ }
+let g:ale_set_loclist = 1
+let g:ale_set_quickfix = 0
+
 highlight ALEErrorSign ctermfg=9 ctermbg=15 guifg=#C30500 guibg=#F5F5F5
 highlight ALEWarningSign ctermfg=11 ctermbg=15 guifg=#ED6237 guibg=#F5F5F5
-"let g:ale_python_auto_pipenv = 1
-"let g:ale_python_pylint_auto_pipenv = 1
-"let g:ale_fixers = {'python': ['trim_whitespace']}
-"let g:ale_set_loclist = 0
-"let g:ale_set_quickfix = 1
-
 
 " Slime
 let g:slime_target = "neovim"
@@ -130,7 +117,7 @@ let g:gruvbox_invert_selection = "0"
 
 " LSP
 lua << EOF
-require'lspconfig'.pyls.setup{
+require('lspconfig').pyls.setup{
    settings = {
        pyls = {
            plugins = {
@@ -153,3 +140,21 @@ let g:test#preserve_screen = 1
 let g:test#python#pytest#options = {
     \ 'all': '-v -s -l --durations=5'
   \}
+
+
+
+lua << EOF
+
+require('telescope').setup{
+    extensions = {
+        fzy_native = {
+            override_generic_sorter = false,
+            override_file_sorter = true,
+        }
+    }
+}
+
+require('telescope').load_extension('fzy_native')
+require('telescope').load_extension('project')
+
+EOF

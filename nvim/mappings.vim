@@ -15,10 +15,18 @@ map <Right> <nop>
 inoremap fd <ESC>
 
 " FZF Mappings
-nnoremap <leader>bb :Buffers<cr>
-nnoremap <C-p>      :Files<cr>
-nnoremap <leader>sf :Ag<cr>
-nnoremap <leader>bc :BCommits<cr>
+nnoremap <C-p>      :silent! Telescope find_files<cr>
+nnoremap <leader>bb :silent! Telescope buffers<cr>
+nnoremap <leader>sf :silent! Telescope live_grep<cr>
+nnoremap <leader>bc :silent! Telescope git_bcommits<cr>
+nnoremap <leader>ac :silent! Telescope git_commits<cr>
+nnoremap <leader>co :silent! Telescope git_branches<cr>
+nnoremap <leader>sy :silent! Telescope lsp_document_symbols<cr>
+nnoremap <leader>wd :silent! Telescope lsp_workspace_diagnostics<cr>
+nnoremap <leader>pp :silent! Telescope project<cr>
+nnoremap <leader>fb :silent! Telescope file_browser<cr>
+nnoremap <leader>sy :silent! Telescope symbols<cr>
+
 nnoremap <f5>       :Rg <C-r><C-w><cr>
 nnoremap <S-f5>     :Rg "<C-r><C-a>"<cr>
 

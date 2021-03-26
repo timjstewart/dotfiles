@@ -5,9 +5,11 @@
 " |___/\___|\__|\__|_|_| |_|\__, |___/
 "                           |___/
 
+set runtimepath^=~/.config/nvim
+
 syntax on
 filetype off
-filetype indent plugin on
+filetype plugin indent on
 
 " Always show tabs
 set showtabline=1
