@@ -57,3 +57,15 @@ function browse_url() {
 
 prompt_context() {}
 
+function git_refresh() {
+    if [ "$#" -ne "1" ]; then
+        echo "usage: $0 MAIN_BRANCH"
+        return 1
+    fi
+    source_branch=$1
+    git checkout "${source_branch}"
+    git fetch
+    git pull
+    git checkout -
+    git merge "${source_branch}"
+}

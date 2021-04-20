@@ -88,6 +88,9 @@ Plug 'preservim/tagbar'
 " Search and Replace
 Plug 'dyng/ctrlsf.vim'
 
+" Python refactoring
+Plug 'python-rope/ropevim'
+
 " Python {{{
 
 " Improved source code indentation for Python
@@ -103,6 +106,8 @@ Plug 'pangloss/vim-javascript'
 " }}}
 " }}}
 " Text {{{
+
+Plug 'tpope/vim-abolish'
 
 " Clean up trailing whitespace whenever you save a file.
 Plug 'vim-scripts/DeleteTrailingWhitespace'
