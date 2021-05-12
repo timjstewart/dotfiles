@@ -19,6 +19,7 @@ nnoremap <leader>bb :Buffers<cr>
 nnoremap <C-p>      :Files<cr>
 nnoremap <leader>sf :Ag<cr>
 nnoremap <leader>bc :BCommits<cr>
+nnoremap <leader>of :History<cr>
 nnoremap <f5>       :Rg <C-r><C-w><cr>
 nnoremap <S-f5>     :Rg "<C-r><C-a>"<cr>
 

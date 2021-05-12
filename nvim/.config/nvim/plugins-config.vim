@@ -113,8 +113,6 @@ let g:jedi#auto_vim_configuration = 0
 "let g:jedi#smart_auto_mappings = 0
 let g:jedi#show_call_signatures = 2
 
-let g:lens#disabled_filetypes = ['nerdtree']
-
 " Taglist
 
 let g:Tlist_Close_On_Select = 1
@@ -149,8 +147,11 @@ let g:ctrlsf_auto_focus = {
             \ "at" : "start"
             \ }
 
-" LSP
+" Language Server Protocol (LSP)
 
 lua << EOF
-require'lspconfig'.pyls.setup{}
+    require'lspconfig'.hls.setup{}
+    require'lspconfig'.pyls.setup{}
+    require'lspconfig'.ocamllsp.setup{}
+    require'lspconfig'.dartls.setup{}
 EOF

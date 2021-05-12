@@ -73,6 +73,12 @@ Plug 'preservim/tagbar'
 " Search and Replace
 Plug 'dyng/ctrlsf.vim'
 
+" Dart {{{
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'natebosch/vim-lsc'
+Plug 'natebosch/vim-lsc-dart'
+" }}}
+
 " Python {{{
 
 " Improved source code indentation for Python

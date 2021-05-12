@@ -134,3 +134,40 @@ snippet test "pytest unit test function"
 def test_${1:name}(${2:fixtures}):
 	$0
 endsnippet
+
+
+snippet foo "testing"
+def `!p snip.rv = '_'.join(t[1].lower().split())`():
+	"""
+	${1:result} = "`!p snip.rv = (t[1].upper())`"
+	Filename: `!p snip.rv = fn`
+	Path:     `!p snip.rv = path`
+	"""
+	# $1
+	pass
+endsnippet
+
+snippet /zip (\d*)/ "ZIP" r
+`!p snip.rv = int(match.group(1)) * "ZIP "`
+endsnippet
+
+snippet /enum (\w*)(( \w*)*)/ "enum" r
+enum `!p snip.rv = f"{match.group(1)}(enum.Enum):"`
+	`!p snip.rv = match.group(2)`
+endsnippet
+
+
+snippet title "Title transformation"
+${1:a text}
+${1/\d+\s*/\u$0/}
+endsnippet
+
+snippet "^i" "import" rbA
+import ${1:main}
+endsnippet
+
+snippet "^f" "import from" rbA
+from ${1:module} import ${2:symbol}
+endsnippet
+
+
