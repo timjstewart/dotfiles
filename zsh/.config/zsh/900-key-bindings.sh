@@ -1,4 +1,6 @@
 set -o vi
+
+bindkey -v
 bindkey "^R" history-incremental-search-backward
 
 # FROM: https://github.com/b4b4r07/zle-vimode/blob/master/zle-vimode.zsh

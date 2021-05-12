@@ -6,7 +6,7 @@
 
 
 " Source init.vim every time it's saved
-augroup source_init_vim
+augroup SourceVimScriptConfig
     autocmd!
     autocmd BufWritePost ~/.dotfiles/nvim/*.vim silent :source %
 augroup END
@@ -22,7 +22,9 @@ augroup Terminal
     autocmd TermOpen *        tnoremap <buffer> <Esc> <c-\><c-n>
     " When you open a terminal, automatically enter insert mode.
     autocmd TermOpen term://* startinsert
-    autocmd FileType fzf      tunmap <buffer> <Esc>
+    autocmd FileType fzf tunmap <buffer> <Esc>
+    autocmd TermOpen * set nonumber norelativenumber
+    autocmd TermOpen * tnoremap <buffer> <c-v><Esc> <Esc>
 augroup END
 
 augroup ReasonMl

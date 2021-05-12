@@ -10,6 +10,9 @@ directories=(
     $HOME/scripts
     $ANDROID_HOME/tools
     $ANDROID_HOME/platform-tools
+    $HOME/.ghcup/bin
+    $HOME/opam/default/bin
+    $HOME/.pub-cache/bin
 )
 
 for dir in ${directories[@]}
@@ -17,9 +20,4 @@ do
     PATH="$dir:$PATH"
 done
 
-
 export PATH
-
-
-
-

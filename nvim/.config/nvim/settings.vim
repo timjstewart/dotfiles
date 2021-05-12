@@ -4,12 +4,15 @@
 " \__ \  __/ |_| |_| | | | | (_| \__ \
 " |___/\___|\__|\__|_|_| |_|\__, |___/
 "                           |___/
+
+set runtimepath^=~/.config/nvim
+
 syntax on
 filetype off
-filetype indent plugin on
+filetype plugin indent on
 
 " Always show tabs
-set showtabline=2
+set showtabline=1
 
 " terminal color enhancements
 set termguicolors
@@ -28,7 +31,7 @@ set undofile
 " Don't redraw screen during macro execution.  Use :redraw to force a redraw
 set lazyredraw
 
-set wildmode=full
+set wildmode=longest:full,full
 
 " UNICODE
 set encoding=UTF-8
@@ -112,7 +115,6 @@ set visualbell
 
 " Show special characters and pick which characters are displayed.
 set list
-set listchars=tab:▸\ ,eol:¬
 
 " Show feedback for substitute command while I'm creating the command.
 set inccommand=split
@@ -120,16 +122,8 @@ set inccommand=split
 " Ignore files I rarely care about.
 set wildignore+=*/.git/*,*/tmp/*,*.swp,*/venv/*,.DS_Store,*.pyc,tags
 
+set path=.,,**
 
-"===============================================================================
-" Project Setup
-"===============================================================================
-
-" Turing (so that gf works on imports).  The ** at the end of the path means
-" that the directory should be recursively searched.
-set path+=**
-
-" 999 was too visually jarring for me
 set scrolloff=3
 
 set suffixesadd=.py
@@ -137,7 +131,43 @@ set suffixesadd=.py
 " I was getting errors using Ctrl-P some times.
 set maxmempattern=2000
 
-set colorcolumn=120
+set nomodeline
+
+set completeopt=menuone,noselect,noinsert
+set shortmess+=c
+
+" Customize Status Line
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=\ %t
+set statusline+=\ (%-0.25{expand('%:h')})
+set statusline+=\ %m
+set statusline+=\ %<
+set statusline+=%#PmenuThumb#
+set statusline+=%=
+set statusline+=%#PmenuSel#
+set statusline+=%y
+set statusline+=%#PmenuThumb#
+set statusline+=%=
+set statusline+=%#PmenuSel#
+set statusline+=\ L:%l/%L\ C:%c
+set statusline+=\ B:%n
+
+" set fillchars=stl:=,stlnc:-
+set fcs=eob:\ ,
+
+" Use only Python 3
+set pyxversion=3
+
+" Disable language providers I don't need.
+let g:loaded_perl_provider = 0
+let g:loaded_python_provider = 0
+let g:loaded_node_provider = 0
+let g:loaded_ruby_provider = 0
+let g:python_host_prog = ''
+
+" Autopairs
+let g:AutoPairsShortcutFastWrap = '<C-]>'
 
 set history=200
 

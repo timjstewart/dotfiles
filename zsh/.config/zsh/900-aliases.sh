@@ -16,6 +16,7 @@ alias vmk='python3.6 -m venv venv'
 
 alias vim=nvim
 alias vi=nvim
+alias v=nvim
 
 # }}}
 # Entr {{{
@@ -50,6 +51,8 @@ alias pytestw='pyfiles | entr -c python -m pytest -s '
 # When the sound doesn't work
 alias killcoreaudio='ps aux | grep /usr/sbin/coreaudiod | awk "{print $2}" | sudo xargs kill -9'
 
+alias extip='curl -s -4 https://ifconfig.co/'
+
 # }}}
 # Directory Listing {{{
 
@@ -81,3 +84,7 @@ alias reloadz='source ~/.zshrc'
 alias brewup='brew update && brew upgrade'
 
 # }}}
+
+alias cat=bat
+
+alias e='nvr --remote'

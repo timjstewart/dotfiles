@@ -5,6 +5,9 @@
 " | .__/|_|\__,_|\__, |_|_| |_|___/
 " |_|            |___/
 
+" Install built-in package.
+packadd! matchit
+
 " Initialize vim-plug
 call plug#begin('~/.vim/plugged')
 
@@ -15,34 +18,38 @@ Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'tpope/vim-obsession'
-
+" }}}
+" Testing {{{
+Plug 'vim-test/vim-test'
+Plug 'reinh/vim-makegreen'
 " }}}
 " REPL {{{
-
 " Send code to another tmux pane (e.g. REPL)
 Plug 'jpalardy/vim-slime'
-
+"}}}
 " Snippets {{{
-
 " A powerful snippet insertion plugin.
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-
 " }}}
 " FZF {{{
-
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
+Plug 'stsewd/fzf-checkout.vim'
+" }}}
+" Telescope {{{
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'nvim-telescope/telescope-project.nvim'
+Plug 'nvim-telescope/telescope-symbols.nvim'
 " }}}
 " File System {{{
-
 " UNIX commands
 Plug 'tpope/vim-eunuch'
-
 " }}}
 " Source Code {{{
-
 " Language Server Protocol (LSP)
 Plug 'neovim/nvim-lspconfig'
 
@@ -72,25 +79,29 @@ Plug 'preservim/tagbar'
 
 " Search and Replace
 Plug 'dyng/ctrlsf.vim'
-
+" }}}
 " Dart {{{
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'natebosch/vim-lsc'
 Plug 'natebosch/vim-lsc-dart'
 " }}}
-
 " Python {{{
+
+" Python refactoring
+Plug 'python-rope/ropevim'
 
 " Improved source code indentation for Python
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'davidhalter/jedi-vim'
-
 " }}}
 " Rust {{{
 Plug 'rust-lang/rust.vim'
 " }}}
+" Javascript {{{
+Plug 'pangloss/vim-javascript'
 " }}}
 " Text {{{
+Plug 'tpope/vim-abolish'
 
 " Clean up trailing whitespace whenever you save a file.
 Plug 'vim-scripts/DeleteTrailingWhitespace'
@@ -102,68 +113,50 @@ Plug 'tpope/vim-surround'
 " Sort of like iedit
 " C-n, C-n, C-p, C-x
 " c, s, I, A
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi'
 
 " File skeletons
 Plug 'pgilad/vim-skeletons'
-
 " }}}
 " Information {{{
-
 " YAML {{{
-"
 Plug 'mrk21/yaml-vim'
-
 " }}}
-" JSON {{{
 
+" JSON {{{
 " View JSON files in VIM with pinache.
 Plug 'elzr/vim-json'
 " }}}
-" Databases {{{
 
+" Databases {{{
 " Accessing Databases
 Plug 'tpope/vim-dadbod'
 Plug 'kristijanhusak/vim-dadbod-ui'
-
 " }}}
-" Miscellaneous {{{
 
+" Miscellaneous {{{
 " Create Wiki Pages in vim
 Plug 'vimwiki/vimwiki'
-
 " For editing org files.
 Plug 'jceb/vim-orgmode'
-
 " }}}
 " }}}
 " Version Control {{{
-
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'shumphrey/fugitive-gitlab.vim'
-
+Plug 'airblade/vim-gitgutter'
 " }}}
 " Utilities {{{
-
 " Send HTTP requests
 Plug 'aquach/vim-http-client'
 Plug 'voldikss/vim-floaterm'
-
 " }}}
-" Appearance {{{
-
-" Status Line {{{
-
-" Fancier status line
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-" }}}
-
 " Color Schemes {{{
 Plug 'morhetz/gruvbox'
 " }}}
+" Docker {{{
+Plug 'ekalinin/dockerfile.vim'
 " }}}
-
 
 call plug#end()

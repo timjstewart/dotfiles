@@ -14,12 +14,20 @@ map <Right> <nop>
 " Map fd to allow quick exit from insert mode.
 inoremap fd <ESC>
 
-" FZF Mappings
-nnoremap <leader>bb :Buffers<cr>
-nnoremap <C-p>      :Files<cr>
-nnoremap <leader>sf :Ag<cr>
-nnoremap <leader>bc :BCommits<cr>
+" Telescope Mappings
+nnoremap <C-p>      :silent! Telescope find_files<cr>
+nnoremap <leader>bb :silent! Telescope buffers<cr>
+nnoremap <leader>sf :silent! Telescope live_grep<cr>
+nnoremap <leader>bc :silent! Telescope git_bcommits<cr>
+nnoremap <leader>ac :silent! Telescope git_commits<cr>
+nnoremap <leader>co :silent! Telescope git_branches<cr>
+nnoremap <leader>sy :silent! Telescope lsp_document_symbols<cr>
+nnoremap <leader>wd :silent! Telescope lsp_workspace_diagnostics<cr>
+nnoremap <leader>pp :silent! Telescope project<cr>
+nnoremap <leader>fb :silent! Telescope file_browser<cr>
+nnoremap <leader>sy :silent! Telescope symbols<cr>
 nnoremap <leader>of :History<cr>
+
 nnoremap <f5>       :Rg <C-r><C-w><cr>
 nnoremap <S-f5>     :Rg "<C-r><C-a>"<cr>
 
@@ -82,6 +90,18 @@ nnoremap ¬ :vertical resize +3<cr>      " <ALT+l> increase width
 
 " Tagbar Mappings
 nnoremap <leader>tt :TagbarToggle<cr>
+
+" Explore Current Directory
+nnoremap - :Explore<cr>
+
+inoremap <c-c> <ESC>
+
+" Testing
+nmap <leader>tn :TestNearest<CR>
+nmap <leader>tf :TestFile<CR>
+nmap <leader>ts :TestSuite<CR>
+nmap <leader>tl :TestLast<CR>
+nmap <leader>tv :TestVisit<CR>
 
 " Explore Current Directory
 nnoremap - :Ex<cr>

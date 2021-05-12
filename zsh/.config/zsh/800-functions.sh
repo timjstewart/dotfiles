@@ -4,7 +4,7 @@
 # Some of these functions were taken from:
 # https://github.com/junegunn/fzf/wiki/examples#git
 function ep() {
-	e $(find . -iname '*.py' | grep -v /venv/ | fzf)
+	nvim $(find . -iname '*.py' | grep -v /venv/ | fzf)
 }
 
 #===============================================================================
@@ -50,10 +50,6 @@ tm() {
   session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&  tmux $change -t "$session" || echo "No sessions found."
 }
 
-function ep() {
-	e $(find . -iname '*.py' | grep -v /venv/ | fzf)
-}
-
 # Activates Chrome Tab with URL or opens a new tab.
 function browse_url() {
     url="$1" osascript -se ~/scripts/select_tab_by_url.scpt
@@ -61,3 +57,15 @@ function browse_url() {
 
 prompt_context() {}
 
+function git_refresh() {
+    if [ "$#" -ne "1" ]; then
+        echo "usage: $0 MAIN_BRANCH"
+        return 1
+    fi
+    source_branch=$1
+    git checkout "${source_branch}"
+    git fetch
+    git pull
+    git checkout -
+    git merge "${source_branch}"
+}

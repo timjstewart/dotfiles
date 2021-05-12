@@ -1,6 +1,5 @@
 export DISABLE_AUTO_TITLE='true'
 export EDITOR=nvim
-export ZSH="/Users/STEWTJ3/.oh-my-zsh"
 export GOPATH=~/go
 export PYENV_ROOT="$HOME/.pyenv"
 
@@ -20,5 +19,6 @@ export FZF_DEFAULT_OPTS="
 --bind 'ctrl-v:execute(code {+})'
 "
 
-export ANDROID_HOME=/Users/$USER/Library/Android/sdk
+export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim
 
+export HOMEBREW_GITHUB_API_TOKEN=995bc57a89308f9a71d661ee95c7b515327b6893

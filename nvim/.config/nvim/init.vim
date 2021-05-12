@@ -6,7 +6,7 @@
 "
 " ----------------------------------------------------
 
-runtime python.vim
+runtime python-config.vim
 runtime settings.vim
 runtime plugins.vim
 runtime colorscheme.vim
