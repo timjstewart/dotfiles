@@ -10,7 +10,11 @@
 colorscheme gruvbox
 
 " }}}
+" Background {{{
 
+set background=dark
+
+" }}}
 " Hightlights {{{
 "
 highlight Normal  ctermbg=none
@@ -20,8 +24,3 @@ highlight NonText guibg=none
 
 " }}}
 
-" Background {{{
-
-set background=dark
-
-" }}}

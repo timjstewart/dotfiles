@@ -1,0 +1,32 @@
+snippet pod "Kubernetes Pod"
+apiVersion: v1
+kind: Pod
+metadata:
+	name: $1
+spec:
+	containers:
+		- name: $2
+			image: $3
+endsnippet
+
+snippet deploy "Kubernetes Deployment"
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+	name: ${1:appName}
+spec:
+	replicas: 2
+	selector:
+		matchLabels:
+			app: $1
+	template:
+		metadata:
+			labels:
+				app: $1
+		spec:
+			containers:
+			- name: $1
+				image: ${2:image}
+				ports:
+				- containerPort: ${3:port}
+endsnippet
